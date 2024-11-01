@@ -1,10 +1,16 @@
 #Greenfoot project file
+dependency1.from=MyWorld
+dependency1.to=ScrollableWorld
+dependency1.type=UsesDependency
+dependency2.from=MyWorld
+dependency2.to=Player
+dependency2.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=552
 editor.fx.0.y=114
 height=1033
-package.numDependencies=0
+package.numDependencies=2
 package.numTargets=6
 project.charset=UTF-8
 publish.hasSource=false
@@ -65,5 +71,5 @@ target6.y=0
 version=3.1.0
 width=1721
 world.lastInstantiated=MyWorld
-xPosition=0
-yPosition=126
+xPosition=110
+yPosition=46
