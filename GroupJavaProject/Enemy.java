@@ -22,7 +22,7 @@ public abstract class Enemy extends Effects
     public void act()
     {
         lookForTarget();
-        
+        setLocation(getX() + speed, getY() + speed);
         
         
         if(this.hp <= 0 ){
@@ -34,7 +34,11 @@ public abstract class Enemy extends Effects
         }
     }
     
-    public abstract void damage();
+    protected abstract void damaged();
+    
+    protected abstract void attack();
+    
+    
     
     public void lookForTarget(){
         if(!getWorld().getObjects(Player.class).isEmpty()){
@@ -47,10 +51,11 @@ public abstract class Enemy extends Effects
         
     }
     
+    /*
     public void attack(){
-        Actor actor = getIntersectingObjects(Player.class);
-        if(getIntersectingObjects(Player.class)){
+        if((Player) getIntersectingObjects(Player.class) != null){
             
         }
     }
+    */
 }
