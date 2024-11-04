@@ -16,7 +16,9 @@ public class Bass extends Enemy
     }
     
     public void attack(){
-        
+        if((Player) getOneIntersectingObject(Player.class) != null){
+            
+        }
     }
     
     public void damaged(){

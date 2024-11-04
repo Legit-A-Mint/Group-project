@@ -8,17 +8,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Enemy extends Effects
 {
-    protected double health, damage, attackSpeed, speed;
+    protected double maxSpeed, speed;
+    protected int hp, damageToPlayer;
+    protected Player player;
     
-    public Enemy(double health, double damage, double attackSpeed, double speed){
-        health = this.health;
-        damage = this.damage;
-        attackSpeed = this.attackSpeed;
-        speed = this.speed;
+    private boolean removeMe;
+    
+    public Enemy(){
+        removeMe = false;
     }
     
     public void act()
     {
-        // Add your action code here.
+        lookForTarget();
+        
+        if(this.hp <= 0 ){
+            removeMe = true;
+        }
+        
+        if(removeMe){
+            getWorld().removeObject(this);
+        }
     }
+    
+    public abstract void damaged();
+    
+    public abstract void attack();
+    
+    public void lookForTarget(){
+        if(!getWorld().getObjects(Player.class).isEmpty()){
+            player = getWorld().getObjects(Player.class).get(0);
+            turnTowards(player.getX(), player.getY());
+        }
+    }
+    
 }
