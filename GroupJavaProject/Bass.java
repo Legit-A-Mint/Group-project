@@ -8,12 +8,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bass extends Enemy
 {
-    /**
-     * Act - do whatever the Bass wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    public Bass(){
+        maxSpeed = 1.3;
+        speed = 0.75;
+        hp = 1;
+        damageToPlayer = 1;
+    }
+    
+    public void attack(){
+        
+    }
+    
+    public void damaged(){
+        
     }
 }
