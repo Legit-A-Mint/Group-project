@@ -1,20 +1,28 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Whale here.
+ * Write a description of class Bass here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Whale extends Enemy
 {
-    /**
-     * Act - do whatever the Whale wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    public Whale(){
+        maxSpeed = 0.2; //Changed the max speed to 0.2
+        speed = 0.1; //Changed the speed to 0.1
+        hp = 6; //Changed the hp to 6
+        damageToPlayer = 5; //Changed the damage to 5
+    }
+    
+    public void attack(){
+        if((Player) getOneIntersectingObject(Player.class) != null){
+            
+        }
+    }
+    
+    public void damaged(){
+        
     }
     public void attack(){
         
