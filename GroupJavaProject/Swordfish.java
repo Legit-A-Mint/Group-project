@@ -24,10 +24,4 @@ public class SwordFish extends Enemy
     public void damaged(){
         
     }
-    public void attack(){
-        
-    }
-    public void damaged(){
-        
-    }
 }

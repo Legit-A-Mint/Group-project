@@ -10,11 +10,12 @@ public class ScrollableWorld extends Effects
 {
     protected GreenfootImage worldImage;
     protected int moveSpeed;
-    protected static final double WORLDSIZE = 1.5;
+    protected static final double WORLDSIZE = 2;
     public ScrollableWorld(){
         worldImage = new GreenfootImage((int)(1024 * WORLDSIZE), (int)(576 * WORLDSIZE));
-        worldImage.setColor(Color.GREEN);
-        worldImage.fill();
+        //worldImage.setColor(Color.GREEN);
+        //worldImage.fill();
+        worldImage = new GreenfootImage("bgtemp.png");
         setImage(worldImage);
         
         //set Movespeed (varies)
@@ -25,16 +26,16 @@ public class ScrollableWorld extends Effects
     public void act()
     {
        if(Greenfoot.isKeyDown("w")){
-           this.setLocation(this.getX(), this.getY() -1 * moveSpeed);
+           this.setLocation(this.getX(), this.getY() +1 * moveSpeed);  
        }
        if(Greenfoot.isKeyDown("a")){
-           this.setLocation(this.getX() -1 * moveSpeed, this.getY());
+           this.setLocation(this.getX() +1 * moveSpeed, this.getY());
        }
        if(Greenfoot.isKeyDown("s")){
-           this.setLocation(this.getX(), this.getY() +1 * moveSpeed); 
+           this.setLocation(this.getX(), this.getY() -1 * moveSpeed);
        }
        if(Greenfoot.isKeyDown("d")){
-           this.setLocation(this.getX() +1 * moveSpeed, this.getY());
+           this.setLocation(this.getX() -1 * moveSpeed, this.getY());
        }
     }
 }

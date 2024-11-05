@@ -8,15 +8,23 @@ import greenfoot.GreenfootImage;
  */
 public class Player extends Effects
 {
-    protected GreenfootImage playerImage;
+    protected GreenfootImage playerImage, reflectedPlayerImage;
     protected int direction;
     public Player(){
         playerImage = new GreenfootImage("shark.png");
+        reflectedPlayerImage = new GreenfootImage("shark.png");
+        reflectedPlayerImage.mirrorHorizontally();
+        
         setImage(playerImage);
         direction = 1;
     }
     public void act(){
-        if(direction == -1){}
+        if(direction == -1){
+            setImage(reflectedPlayerImage);
+        }
+        else if (direction == 1){
+            setImage(playerImage);
+        }
         if(Greenfoot.isKeyDown("a")){
             direction = -1;
         }
