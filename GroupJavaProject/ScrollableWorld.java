@@ -25,17 +25,20 @@ public class ScrollableWorld extends Effects
     
     public void act()
     {
-       if(Greenfoot.isKeyDown("w")){
+        if(!this.isTouching(Player.class)){
+            
+        }
+        if(Greenfoot.isKeyDown("w")){
            this.setLocation(this.getX(), this.getY() +1 * moveSpeed);  
-       }
-       if(Greenfoot.isKeyDown("a")){
+        }
+        if(Greenfoot.isKeyDown("a")){
            this.setLocation(this.getX() +1 * moveSpeed, this.getY());
-       }
-       if(Greenfoot.isKeyDown("s")){
+        }
+        if(Greenfoot.isKeyDown("s")){
            this.setLocation(this.getX(), this.getY() -1 * moveSpeed);
-       }
-       if(Greenfoot.isKeyDown("d")){
+        }
+        if(Greenfoot.isKeyDown("d")){
            this.setLocation(this.getX() -1 * moveSpeed, this.getY());
-       }
+        }
     }
 }
