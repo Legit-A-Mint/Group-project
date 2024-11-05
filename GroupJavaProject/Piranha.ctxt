@@ -1,11 +1,11 @@
 #BlueJ class context
-comment0.target=Whale
+comment0.target=Piranha
 comment0.text=\n\ Write\ a\ description\ of\ class\ Bass\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
-comment1.target=Whale()
+comment1.target=Piranha()
 comment2.params=
 comment2.target=void\ attack()
-comment2.text=Whale\ has\ no\ other\ unique\ perks\ other\ then\ doing\ damage
+comment2.text=Piranha\ has\ no\ other\ unique\ perks\ other\ then\ doing\ damage
 comment3.params=
 comment3.target=void\ damaged()
 numComments=4

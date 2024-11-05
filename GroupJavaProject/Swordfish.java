@@ -9,24 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class SwordFish extends Enemy
 {
     public SwordFish(){
-        maxSpeed = 0.9; //Changed the max speed to 0.9
-        speed = 0.5; //Changed the speed to 0.5
-        hp = 2; //Changed the hp to 2
-        damageToPlayer = 3; //Changed the damage to 3
+        maxSpeed = 1.4; // Has a max speed of 1.4
+        speed = 0.9; // Has a regular speed of 0.9
+        hp = 40; // Has an hp of 40
+        damageToPlayer = 25; // Does 25 damage to the player
     }
     
+    /* SwordFish has no other unique perks other then doing damage */
     public void attack(){
         if((Player) getOneIntersectingObject(Player.class) != null){
             
         }
     }
     
-    public void damaged(){
-        
-    }
-    public void attack(){
-        
-    }
     public void damaged(){
         
     }

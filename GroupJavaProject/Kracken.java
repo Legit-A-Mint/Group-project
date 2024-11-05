@@ -9,24 +9,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Kracken extends Enemy
 {
     public Kracken(){
-        maxSpeed = 0.3; //Changed the max speed to 0.2
-        speed = 0.2; //Changed the speed to 0.1
-        hp = 4; //Changed the hp to 4
-        damageToPlayer = 3; //Changed the damage to 3
+        maxSpeed = 0.7; // Has a max speed to 0.7
+        speed = 0.5; // Has a regular speed to 0.5
+        hp = 40; // Has an hp of 40
+        damageToPlayer = 10; // Does 10 damage to the player
     }
     
+    /* Kracken will stun the player reducing the fire rate and movement speed by
+       half.*/
     public void attack(){
         if((Player) getOneIntersectingObject(Player.class) != null){
             
         }
     }
     
-    public void damaged(){
-        
-    }
-    public void attack(){
-        
-    }
     public void damaged(){
         
     }

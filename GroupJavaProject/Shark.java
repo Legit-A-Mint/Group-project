@@ -9,24 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Shark extends Enemy
 {
     public Shark(){
-        maxSpeed = 1.2; //Changed the max speed to 1.2
-        speed = 0.7; //Changed the speed to 0.7
-        hp = 3; //Changed the hp to 3
-        damageToPlayer = 4; //Changed the damage to 4
+        maxSpeed = 1.2; // Has a max speed of 1.2
+        speed = 0.7; // Has a regular speed of 0.7
+        hp = 50; // Has an hp of 50
+        damageToPlayer = 30; // Does 30 damage to the player
     }
     
+    /* Shark ahs no other unique perks other then doing damage */
     public void attack(){
         if((Player) getOneIntersectingObject(Player.class) != null){
             
         }
     }
     
-    public void damaged(){
-        
-    }
-    public void attack(){
-        
-    }
     public void damaged(){
         
     }
