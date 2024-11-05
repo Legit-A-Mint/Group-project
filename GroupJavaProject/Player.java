@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class Player extends Effects
-{
+    {
     protected GreenfootImage playerImage;
     protected int direction;
     
@@ -24,18 +24,18 @@ public class Player extends Effects
     
     private double closestTargetDistance = 0;
     private double distanceToActor;
-
-    playerMaxHealth = 5 + moddedHp;
-    playerHealth = playerMaxHealth;
-    gold = 0;
-    CPU = moddedCPU;
-    maxSpeed = (1.25 + moddedSpeed) * CPU;
-    speed = (maxSpeed) * CPU;
-        
-    playerImage = new GreenfootImage("shark.png");
-    setImage(playerImage);
-    direction = 1;
-        
+    
+    public Player(){
+        playerMaxHealth = 5 + moddedHp;
+        playerHealth = playerMaxHealth;
+        gold = 0;
+        CPU = moddedCPU;
+        maxSpeed = (1.25 + moddedSpeed) * CPU;
+        speed = (maxSpeed) * CPU;
+            
+        playerImage = new GreenfootImage("shark.png");
+        setImage(playerImage);
+        direction = 1;
     }
     
     public void act()
