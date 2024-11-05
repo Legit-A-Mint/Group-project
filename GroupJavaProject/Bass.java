@@ -9,8 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bass extends Enemy
 {
     public Bass(){
-        maxSpeed = 1.3;
-        speed = 0.75;
+        maxSpeed = 0.8; 
+        speed = 0.4;
         hp = 1;
         damageToPlayer = 1;
     }

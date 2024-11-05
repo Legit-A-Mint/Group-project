@@ -1,19 +1,27 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Kracken here.
+ * Write a description of class Bass here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Kracken extends Enemy
 {
-    /**
-     * Act - do whatever the Kracken wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
+    public Kracken(){
+        maxSpeed = 0.3; //Changed the max speed to 0.2
+        speed = 0.2; //Changed the speed to 0.1
+        hp = 4; //Changed the hp to 4
+        damageToPlayer = 3; //Changed the damage to 3
+    }
+    
+    public void attack(){
+        if((Player) getOneIntersectingObject(Player.class) != null){
+            
+        }
+    }
+    
+    public void damaged(){
+        
     }
 }
