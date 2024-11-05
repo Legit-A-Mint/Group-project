@@ -14,6 +14,9 @@ public class MyWorld extends World
         img.setColor(Color.BLUE);
         img.fill();
         setBackground(img);
+        
+        addObject(new ScrollableWorld(), this.getWidth()/2, this.getHeight()/2);
+        addObject(new Player(), this.getWidth()/2, this.getHeight()/2); 
     }
     
     public void act(){

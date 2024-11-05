@@ -24,4 +24,10 @@ public class Crab extends Enemy
     public void damaged(){
         
     }
+    public void attack(){
+        
+    }
+    public void damaged(){
+        
+    }
 }

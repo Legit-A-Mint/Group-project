@@ -16,7 +16,8 @@ public class Backpack extends Actor
         // Add your action code here.
     }
     
-    public void getItem(){
-        return inventory[weaponIndex]
+    public int getItem(){
+        //return inventory[weaponIndex];
+        return -1;
     }
 }

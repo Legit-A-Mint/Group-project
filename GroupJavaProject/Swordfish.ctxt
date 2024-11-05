@@ -1,8 +1,9 @@
 #BlueJ class context
-comment0.target=SwordFish
-comment0.text=\n\ Write\ a\ description\ of\ class\ Bass\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.target=Swordfish
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Swordfish\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
-comment1.target=SwordFish()
+comment1.target=void\ act()
+comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Swordfish\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
 comment2.target=void\ attack()
 comment3.params=

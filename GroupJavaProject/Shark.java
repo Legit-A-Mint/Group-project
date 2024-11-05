@@ -24,4 +24,10 @@ public class Shark extends Enemy
     public void damaged(){
         
     }
+    public void attack(){
+        
+    }
+    public void damaged(){
+        
+    }
 }

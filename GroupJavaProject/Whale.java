@@ -24,4 +24,10 @@ public class Whale extends Enemy
     public void damaged(){
         
     }
+    public void attack(){
+        
+    }
+    public void damaged(){
+        
+    }
 }

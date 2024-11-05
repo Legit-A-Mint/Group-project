@@ -1,5 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
+import greenfoot.GreenfootImage;
 /**
  * Write a description of class Player here.
  * 
@@ -8,16 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Effects
 {
-    /**
-     * Act - do whatever the Player wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public Player (){
-        
+    protected GreenfootImage playerImage;
+    protected int direction;
+    public Player(){
+        playerImage = new GreenfootImage("shark.png");
+        setImage(playerImage);
+        direction = 1;
     }
-    
-    public void act()
-    {
-        // Add your action code here.
+    public void act(){
+        if(direction == -1){}
+        if(Greenfoot.isKeyDown("a")){
+            direction = -1;
+        }
+        if(Greenfoot.isKeyDown("d")){
+            direction = 1;
+        }
     }
 }
