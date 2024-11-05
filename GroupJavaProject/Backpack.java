@@ -17,6 +17,10 @@ public class Backpack extends Actor
     }
     
     public void getItem(){
-        return inventory[weaponIndex]
+        // return inventory[weaponIndex];
+    }
+    
+    public int getKiteRange(){
+        return -1;
     }
 }

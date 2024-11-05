@@ -16,10 +16,14 @@ public class Bass extends Enemy
     }
     
     public void attack(){
-        
+        if((Player) getIntersectingObjects(Player.class) != null){
+            player = getWorld().getObjects(Player.class).get(0);
+            player.setHp(damageToPlayer);
+        }
     }
     
     public void damaged(){
-        
+        player = getWorld().getObjects(Player.class).get(0);
+        hp = hp - getPlayerDamage();
     }
 }

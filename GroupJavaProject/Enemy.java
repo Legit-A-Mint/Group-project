@@ -21,6 +21,7 @@ public abstract class Enemy extends Effects
     
     public void act()
     {
+        player = getWorld().getObjects(Player.class).get(0);
         lookForTarget();
         setLocation(getX() + speed, getY() + speed);
         
@@ -42,7 +43,6 @@ public abstract class Enemy extends Effects
     
     public void lookForTarget(){
         if(!getWorld().getObjects(Player.class).isEmpty()){
-            player = getWorld().getObjects(Player.class).get(0);
             turnTowards(player.getX(), player.getY());
         }
     }
@@ -50,12 +50,4 @@ public abstract class Enemy extends Effects
     public void moveToTarget(){
         
     }
-    
-    /*
-    public void attack(){
-        if((Player) getIntersectingObjects(Player.class) != null){
-            
-        }
-    }
-    */
 }
