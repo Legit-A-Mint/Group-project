@@ -1,6 +1,5 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 import greenfoot.GreenfootImage;
-
 /**
  * Write a description of class Player here.
  * 

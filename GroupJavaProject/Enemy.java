@@ -6,14 +6,40 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Enemy extends Effects
+public abstract class Enemy extends Effects
 {
-    /**
-     * Act - do whatever the Enemy wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    protected double maxSpeed, speed;
+    protected int hp, damageToPlayer;
+    protected Player player;
+    
+    private boolean removeMe;
+    
+    public Enemy(){
+        removeMe = false;
+    }
+    
     public void act()
     {
-        // Add your action code here.
+        lookForTarget();
+        
+        if(this.hp <= 0 ){
+            removeMe = true;
+        }
+        
+        if(removeMe){
+            getWorld().removeObject(this);
+        }
     }
+    
+    public abstract void damaged();
+    
+    public abstract void attack();
+    
+    public void lookForTarget(){
+        if(!getWorld().getObjects(Player.class).isEmpty()){
+            player = getWorld().getObjects(Player.class).get(0);
+            turnTowards(player.getX(), player.getY());
+        }
+    }
+    
 }
