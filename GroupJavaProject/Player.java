@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Player extends Effects
 {
     protected GreenfootImage playerImage, reflectedPlayerImage;
-    protected int direction;
+    private int direction;
     
     private Enemy targetEnemy;
     private ArrayList<Enemy> enemies;
@@ -66,6 +66,9 @@ public class Player extends Effects
         if(actCount % intelligence == 0){
             action();
         }*/
+    }
+    public void setDirection(int dir){
+        direction = dir;
     }
     
     /*

@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {   
     private GreenfootImage img;
+    private Player player;
     
     public MyWorld(){  
         //create an unbounded world 
@@ -14,9 +15,10 @@ public class MyWorld extends World
         img.setColor(Color.BLUE);
         img.fill();
         setBackground(img);
+        player = new Player();
         
-        addObject(new ScrollableWorld(), this.getWidth()/2, this.getHeight()/2);
-        addObject(new Player(), this.getWidth()/2, this.getHeight()/2); 
+        addObject(new ScrollableWorld(), this.getWidth()/2, this.getHeight()/2); 
+        addObject(player, this.getWidth()/2, this.getHeight()/2);
     }
     
     public void act(){
@@ -25,5 +27,9 @@ public class MyWorld extends World
         // System.out.print(....);
         
         
+    }
+    
+    public Player getPlayer(){
+        return player;
     }
 }

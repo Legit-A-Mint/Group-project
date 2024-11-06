@@ -10,9 +10,17 @@ public class ScrollableWorld extends Effects
 {
     protected GreenfootImage worldImage;
     protected int moveSpeed;
-    protected static final double WORLDSIZE = 2;
+    protected final double WORLDSIZEFACTOR = 2;
+    private int lastDir;
+    
+    //test delete ltr
+    private int testCounter;
+    private Player player;
+    
+    
     public ScrollableWorld(){
-        worldImage = new GreenfootImage((int)(1024 * WORLDSIZE), (int)(576 * WORLDSIZE));
+        //worldImage = new GreenfootImage((int)
+        //(1024 * WORLDSIZEFACTOR), (int)(576 * WORLDSIZEFACTOR));
         //worldImage.setColor(Color.GREEN);
         //worldImage.fill();
         worldImage = new GreenfootImage("bgtemp.png");
@@ -22,23 +30,87 @@ public class ScrollableWorld extends Effects
         moveSpeed = 5;
     }
     
-    
     public void act()
     {
-        if(!this.isTouching(Player.class)){
-            
+        testCounter++; 
+        handleCollision();
+        
+        //testing movement delete ltr
+        if(testCounter < 100){
+            moveWorld("UP");   
         }
-        if(Greenfoot.isKeyDown("w")){
-           this.setLocation(this.getX(), this.getY() +1 * moveSpeed);  
+        else if(testCounter > 100 && testCounter < 200){
+            moveWorld("LEFT");
         }
-        if(Greenfoot.isKeyDown("a")){
-           this.setLocation(this.getX() +1 * moveSpeed, this.getY());
+        else if(testCounter > 200 && testCounter < 300){
+            moveWorld("DOWN");
         }
-        if(Greenfoot.isKeyDown("s")){
-           this.setLocation(this.getX(), this.getY() -1 * moveSpeed);
+        else if(testCounter > 300 && testCounter < 400){
+            moveWorld("RIGHT");
         }
-        if(Greenfoot.isKeyDown("d")){
-           this.setLocation(this.getX() -1 * moveSpeed, this.getY());
+        else if(testCounter > 400){
+            moveWorld("MANUAL");
+        }
+    }
+    
+    //will have direction parameters
+    public void moveWorld(String direction){
+        //manual movement mode, for debugging
+        if(direction.toUpperCase().equals("MANUAL")){
+            if(Greenfoot.isKeyDown("w")){
+            this.setLocation(this.getX(), this.getY() + moveSpeed);  
+            lastDir = 1;
+            }
+            if(Greenfoot.isKeyDown("a")){
+                this.setLocation(this.getX() + moveSpeed, this.getY());
+                lastDir = 2;
+            }
+            if(Greenfoot.isKeyDown("s")){
+                this.setLocation(this.getX(), this.getY() - moveSpeed);
+                lastDir = 3;
+            }
+            if(Greenfoot.isKeyDown("d")){
+                this.setLocation(this.getX() - moveSpeed, this.getY());
+                lastDir = 4;
+            } 
+        }
+        
+        if(direction.toUpperCase().equals("UP")){
+            this.setLocation(this.getX(), this.getY() + moveSpeed);  
+            lastDir = 1;
+        }
+        if(direction.toUpperCase().equals("LEFT")){
+            this.setLocation(this.getX() + moveSpeed, this.getY());
+            //set direction in player class
+            (((MyWorld)getWorld()).getPlayer()).setDirection(-1);
+            lastDir = 2; 
+        }
+        if(direction.toUpperCase().equals("DOWN")){
+            this.setLocation(this.getX(), this.getY() - moveSpeed);
+            lastDir = 3;
+        }
+        if(direction.toUpperCase().equals("RIGHT")){
+            this.setLocation(this.getX() - moveSpeed, this.getY());
+            //set direction in player class
+            (((MyWorld)getWorld()).getPlayer()).setDirection(1);
+            lastDir = 4;
+        }
+    }
+    
+    public void handleCollision(){
+        //handle barriers for x direction
+        //if location is too far from origin, move back
+        if(this.getX() > worldImage.getWidth() - getWorld().getWidth()/2){
+            this.setLocation(this.getX() - (moveSpeed), this.getY());  
+        }
+        if(this.getX() < - (getWorld().getWidth()/2)){
+            this.setLocation(this.getX() + moveSpeed, this.getY());  
+        }
+        if(this.getY() > worldImage.getHeight() - getWorld().getHeight()/2){
+            this.setLocation(this.getX(), this.getY() - moveSpeed);
+        }
+        if(this.getY() < - (getWorld().getHeight()/2)){
+            this.setLocation(this.getX(), this.getY() + moveSpeed);  
         }
     }
 }

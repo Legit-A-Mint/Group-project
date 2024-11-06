@@ -42,4 +42,7 @@ public abstract class Enemy extends Effects
         }
     }
     
+    public void spawn(){
+        
+    }
 }

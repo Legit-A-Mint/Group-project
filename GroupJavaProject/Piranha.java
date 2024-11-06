@@ -6,15 +6,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class SwordFish extends Enemy
+public class Piranha extends Enemy
 {
-    public SwordFish(){
-        maxSpeed = 0.9; //Changed the max speed to 0.9
-        speed = 0.5; //Changed the speed to 0.5
-        hp = 2; //Changed the hp to 2
-        damageToPlayer = 3; //Changed the damage to 3
+    public Piranha(){
+        maxSpeed = 0.6; // Has a max speed of 0.4
+        speed = 0.4; // Has a regular speed of 0.2
+        hp = 30; // Has an hp of 30
+        damageToPlayer = 15; // Does 15 damage to the player
     }
     
+    /* Piranha has no other unique perks other then doing damage */
     public void attack(){
         if((Player) getOneIntersectingObject(Player.class) != null){
             

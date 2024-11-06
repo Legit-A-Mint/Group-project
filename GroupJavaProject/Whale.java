@@ -9,12 +9,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Whale extends Enemy
 {
     public Whale(){
-        maxSpeed = 0.2; //Changed the max speed to 0.2
-        speed = 0.1; //Changed the speed to 0.1
-        hp = 6; //Changed the hp to 6
-        damageToPlayer = 5; //Changed the damage to 5
+        maxSpeed = 0.2; // Has a max speed of 0.2
+        speed = 0.1; // Has a regular speed of 0.1
+        hp = 200; // Has an hp of 200
+        damageToPlayer = 75; // Does 75 damage to the player
     }
     
+    /* Whale has no other unique perks other then doing damage */
     public void attack(){
         if((Player) getOneIntersectingObject(Player.class) != null){
             
