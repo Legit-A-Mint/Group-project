@@ -30,6 +30,6 @@ public class MyWorld extends World
     }
     
     public Player getPlayer(){
-        return player;
+        return player; 
     }
 }
