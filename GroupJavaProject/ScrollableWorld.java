@@ -26,7 +26,6 @@ public class ScrollableWorld extends Effects
         //worldImage.fill();
         worldImage = new GreenfootImage("bgtemp.png");
         setImage(worldImage);
-        
         //set Movespeed (varies)
         moveSpeed = 5;
     }

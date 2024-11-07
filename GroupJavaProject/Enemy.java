@@ -10,7 +10,7 @@ public abstract class Enemy extends Effects
 {
     protected double maxSpeed, speed;
     protected int hp, damageToPlayer;
-    protected Player player;
+    protected Player player; 
     
     private boolean removeMe;
     
@@ -42,7 +42,7 @@ public abstract class Enemy extends Effects
         }
     }
     
-    public void spawn(){
+    public void spawn() {
         
     }
 }
