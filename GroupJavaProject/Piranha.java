@@ -25,4 +25,8 @@ public class Piranha extends Enemy
     public void damaged(){
         
     }
+    
+    public boolean checkForCollision(){
+       return false; 
+    }
 }

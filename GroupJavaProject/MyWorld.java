@@ -10,6 +10,7 @@ public class MyWorld extends World
     private Player player;
     private Bass bass;
     private ScrollableWorld sw;
+    private Whale whale;
     
     private int waveCount, actCount;
     private boolean spawnOnce;

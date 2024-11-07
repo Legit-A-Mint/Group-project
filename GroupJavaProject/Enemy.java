@@ -22,7 +22,7 @@ public abstract class Enemy extends Effects
     
     protected int spawnX, spawnY;
     
-    
+    protected abstract boolean checkForCollision();
     public Enemy(){
         if(Greenfoot.getRandomNumber (2) % 2 == 0){
             spawnX  = Greenfoot.getRandomNumber (MAX_SPAWN_DISTANCE) + MIN_SPAWN_DISTANCE;
@@ -80,12 +80,14 @@ public abstract class Enemy extends Effects
    
    
     public void moveWithWorld(){
-        ScrollableWorld sw = ((MyWorld)getWorld()).getScrollWorld();
+        ScrollableWorld sw = getWorld().getObjects(ScrollableWorld.class).get(0);
         
         relativeX += speedX;
         relativeY += speedY;
         
-        setLocation(sw.getX() + spawnX + relativeX, sw.getY() + relativeY + spawnY);
+        //Sets the location of object based on the relative position in ScrollableWorld
+        //SpawnX and SpawnY handles spawn location
+        setLocation(sw.getX() + relativeX + spawnX, sw.getY() + relativeY + spawnY);
     }
     
     public void spawn(){

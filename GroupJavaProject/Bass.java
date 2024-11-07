@@ -41,5 +41,7 @@ public class Bass extends Enemy
         
     }
     
-    
+    public boolean checkForCollision(){
+       return false; 
+    }
 }
