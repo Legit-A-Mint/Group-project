@@ -16,7 +16,7 @@ public class ScrollableWorld extends Effects
     
     //test delete ltr
     private int testCounter;
-    private Player player;
+    
     
     
     public ScrollableWorld(){

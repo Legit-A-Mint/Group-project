@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Enemy extends Effects
 {
+    protected int relativeX, relativeY;
     protected double maxSpeed, speed;
     protected int hp, damageToPlayer;
     protected Player player;

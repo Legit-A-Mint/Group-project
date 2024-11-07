@@ -8,6 +8,8 @@ public class MyWorld extends World
 {   
     private GreenfootImage img;
     private Player player;
+    private Bass bass;
+    private ScrollableWorld sw;
     
     public MyWorld(){  
         //create an unbounded world 
@@ -17,9 +19,13 @@ public class MyWorld extends World
         img.fill();
         setBackground(img);
         player = new Player();
+        sw = new ScrollableWorld();
         
-        addObject(new ScrollableWorld(), this.getWidth()/2, this.getHeight()/2); 
+        
+        addObject(sw, this.getWidth()/2, this.getHeight()/2); 
         addObject(player, this.getWidth()/2, this.getHeight()/2);
+        bass = new Bass();
+        addObject(bass, 120, 120);
     }
     
     public void act(){
@@ -32,5 +38,9 @@ public class MyWorld extends World
     
     public Player getPlayer(){
         return player; 
+    }
+    
+    public ScrollableWorld getScrollWorld(){
+        return sw;
     }
 }

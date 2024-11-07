@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=MyWorld
-comment0.text=\r\n\ me\r\n\ \r\n
+comment0.text=\r\n\ me\r\n\ Version\ 1.0.0\r\n
 comment1.params=
 comment1.target=MyWorld()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=Player\ getPlayer()
-numComments=4
+comment4.params=
+comment4.target=ScrollableWorld\ getScrollWorld()
+numComments=5
