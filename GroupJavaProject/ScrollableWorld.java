@@ -14,9 +14,11 @@ public class ScrollableWorld extends Effects
     private int lastDir;
     private int relativeX, relativeY;
     
+    
+    
     //test delete ltr
     private int testCounter;
-    private Player player;
+    
     
     
     public ScrollableWorld(){
@@ -33,23 +35,9 @@ public class ScrollableWorld extends Effects
     public void act()
     {
         testCounter++; 
-                
-        //testing movement delete ltr
-        if(testCounter < 100){
-            moveWorld("UP");   
-        }
-        else if(testCounter > 100 && testCounter < 200){
-            moveWorld("LEFT");
-        }
-        else if(testCounter > 200 && testCounter < 300){
-            moveWorld("DOWN");
-        }
-        else if(testCounter > 300 && testCounter < 400){
-            moveWorld("RIGHT");
-        }
-        else if(testCounter > 400){
-            moveWorld("MANUAL");
-        }
+        
+        moveWorld("MANUAL");
+
         handleCollision();
     }
     

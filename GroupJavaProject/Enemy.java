@@ -8,9 +8,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Enemy extends Effects
 {
+    protected int relativeX, relativeY;
     protected double maxSpeed, speed;
     protected int hp, damageToPlayer;
-    protected Player player; 
+    protected Player player;
     
     private boolean removeMe;
     
@@ -41,8 +42,13 @@ public abstract class Enemy extends Effects
             turnTowards(player.getX(), player.getY());
         }
     }
+    public void moveWithWorld(){
+        ScrollableWorld sw = ((MyWorld)getWorld()).getScrollWorld();
+        
+        setLocation(sw.getX() + 100, sw.getY() + 100);
+    }
     
-    public void spawn() {
+    public void spawn(){
         
     }
 }

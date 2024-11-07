@@ -8,6 +8,8 @@ public class MyWorld extends World
 {   
     private GreenfootImage img;
     private Player player;
+    private Bass bass;
+    private ScrollableWorld sw;
     
     public MyWorld(){  
         //create an unbounded world 
@@ -17,17 +19,19 @@ public class MyWorld extends World
         img.fill();
         setBackground(img);
         player = new Player();
+        sw = new ScrollableWorld();
         
-        addObject(new ScrollableWorld(), this.getWidth()/2, this.getHeight()/2); 
+        
+        addObject(sw, this.getWidth()/2, this.getHeight()/2); 
         addObject(player, this.getWidth()/2, this.getHeight()/2);
+        bass = new Bass();
+        addObject(bass, 120, 120);
     }
     
     public void act(){
         //debug System out prints out non inspectables
         
         // System.out.print(....);
-        
-        spawnEnemies();
         
         
     }
@@ -36,36 +40,7 @@ public class MyWorld extends World
         return player; 
     }
     
-    public void spawnEnemies() {
-        // Create and spawn different types of enemies
-        //if()...
-            Enemy bass = new Bass();
-            bass.spawn();
-    
-            Enemy crab = new Crab();
-            crab.spawn();
-    
-            Enemy kraken = new Kracken();
-            kraken.spawn();
-    
-            Enemy piranha = new Piranha();
-            piranha.spawn();
-    
-            Enemy pufferfish = new Pufferfish();
-            pufferfish.spawn();
-    
-            Enemy shark = new Shark();
-            shark.spawn();
-    
-            Enemy whale = new Whale();
-            whale.spawn();
-    }
-    
-    public int getWorldImageWidth() {
-        return img.getWidth();
-    }
-
-    public int getWorldImageHeight() {
-        return img.getHeight();
+    public ScrollableWorld getScrollWorld(){
+        return sw;
     }
 }

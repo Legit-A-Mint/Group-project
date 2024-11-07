@@ -25,6 +25,8 @@ public class Player extends Effects
     private double closestTargetDistance = 0;
     private double distanceToActor;
     
+    private int relativeX, relativeY;
+    
     public Player(){
         playerImage = new GreenfootImage("shark.png");
         reflectedPlayerImage = new GreenfootImage("shark.png");
