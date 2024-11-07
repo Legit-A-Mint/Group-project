@@ -10,4 +10,6 @@ comment3.target=void\ attack()
 comment3.text=Bass\ has\ no\ other\ unique\ perks\ other\ then\ doing\ damage
 comment4.params=
 comment4.target=void\ damaged()
-numComments=5
+comment5.params=
+comment5.target=boolean\ checkForCollision()
+numComments=6

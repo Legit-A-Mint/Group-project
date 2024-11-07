@@ -70,7 +70,7 @@ public class ScrollableWorld extends Effects
         if(direction.toUpperCase().equals("LEFT")){
             this.setLocation(this.getX() + moveSpeed, this.getY());
             //set direction in player class
-            (((MyWorld)getWorld()).getPlayer()).setDirection(-1);
+            (getWorld().getObjects(Player.class).get(0)).setDirection(-1);
             lastDir = 2; 
         }
         if(direction.toUpperCase().equals("DOWN")){
@@ -80,7 +80,7 @@ public class ScrollableWorld extends Effects
         if(direction.toUpperCase().equals("RIGHT")){
             this.setLocation(this.getX() - moveSpeed, this.getY());
             //set direction in player class
-            (((MyWorld)getWorld()).getPlayer()).setDirection(1);
+            (getWorld().getObjects(Player.class).get(0)).setDirection(1);
             lastDir = 4;
         }
     }

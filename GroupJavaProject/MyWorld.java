@@ -10,6 +10,7 @@ public class MyWorld extends World
     private Player player;
     private Bass bass;
     private ScrollableWorld sw;
+    private Whale whale;
     
     public MyWorld(){  
         //create an unbounded world 
@@ -26,6 +27,9 @@ public class MyWorld extends World
         addObject(player, this.getWidth()/2, this.getHeight()/2);
         bass = new Bass();
         addObject(bass, 120, 120);
+        
+        whale = new Whale();
+        addObject(whale, 120, 120);
     }
     
     public void act(){
@@ -34,13 +38,5 @@ public class MyWorld extends World
         // System.out.print(....);
         
         
-    }
-    
-    public Player getPlayer(){
-        return player; 
-    }
-    
-    public ScrollableWorld getScrollWorld(){
-        return sw;
     }
 }
