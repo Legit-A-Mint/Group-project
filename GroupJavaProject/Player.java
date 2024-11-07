@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+=======
+import greenfoot.*;
+import greenfoot.GreenfootImage;
+>>>>>>> main
 import java.util.ArrayList;
 
 /**
@@ -9,7 +14,12 @@ import java.util.ArrayList;
  */
 public class Player extends Effects
 {
+<<<<<<< HEAD
     private GreenfootImage[] tempImg;
+=======
+    protected GreenfootImage playerImage, reflectedPlayerImage;
+    private int direction;
+>>>>>>> main
     
     private Enemy targetEnemy;
     private ArrayList<Enemy> enemies;
@@ -23,17 +33,30 @@ public class Player extends Effects
     private double closestTargetDistance = 0;
     private double distanceToActor;
     
+<<<<<<< HEAD
     public Player (){
         for(int i = 0; i < tempImg.length; i++){
             
         }
         
+=======
+    public Player(){
+        playerImage = new GreenfootImage("shark.png");
+        reflectedPlayerImage = new GreenfootImage("shark.png");
+        reflectedPlayerImage.mirrorHorizontally();
+        
+        setImage(playerImage);
+        direction = 1;
+        
+        /*
+>>>>>>> main
         playerMaxHealth = 5 + moddedHp;
         playerHealth = playerMaxHealth;
         gold = 0;
         CPU = moddedCPU;
         maxSpeed = (1.25 + moddedSpeed) * CPU;
         speed = (maxSpeed) * CPU;
+<<<<<<< HEAD
         
     }
     
@@ -75,6 +98,66 @@ public class Player extends Effects
             getWorld.addObject()
     }
     
+=======
+        */
+    }
+    public void act(){
+        // init backpack here, not sure how
+        if(direction == -1){}
+            if(direction == -1){
+            setImage(reflectedPlayerImage);
+        }
+        else if (direction == 1){
+            setImage(playerImage);
+        }
+        
+        if(Greenfoot.isKeyDown("a") && !Greenfoot.isKeyDown("d")){
+            direction = -1;
+        }
+        if(Greenfoot.isKeyDown("d") && !Greenfoot.isKeyDown("a")){
+            direction = 1;
+        }
+    
+        actCount++;
+        /*
+        if(actCount % intelligence == 0){
+            action();
+        }*/
+    }
+    public void setDirection(int dir){
+        direction = dir;
+    }
+    
+    /*
+    public void action(){
+        
+        
+        targetClosestEnemy();
+        
+        
+        
+        if(!melee || !attackReady || distanceToActor < Backpack.getKiteRange()){
+            move(-speed);
+        }else{
+            if(melee && attackReady){
+                move(speed);
+            }
+        }
+        
+        if(attackReady && Backpack.getWithinRange()){
+            initAttack();
+        }
+        
+        move(speed);
+        
+    }
+    
+    public void initAttack(){
+        if(!melee)
+            getWorld.addObject();
+    }
+    
+>>>>>>> main
     public void targetClosestEnemy(){
         
         enemies = (ArrayList<Enemy>)getObjectsInRange(40, Enemy.class);
@@ -124,5 +207,9 @@ public class Player extends Effects
     public int getY(){
         return getY();
     }
+<<<<<<< HEAD
     
+=======
+    */
+>>>>>>> main
 }

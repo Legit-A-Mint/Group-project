@@ -6,17 +6,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Pufferfish extends Enemy
+public class Piranha extends Enemy
 {
-    public Pufferfish(){
-        maxSpeed = 1; // Has a max speed of 1
-        speed = 0.5; // Has a regular speed of 0.5
+    public Piranha(){
+        maxSpeed = 0.6; // Has a max speed of 0.4
+        speed = 0.4; // Has a regular speed of 0.2
         hp = 30; // Has an hp of 30
-        damageToPlayer = 10; // Does 10 damage to the player
+        damageToPlayer = 15; // Does 15 damage to the player
     }
     
-    /* Pufferfish will do a total of 25 damage. 10 damage when it first hit the
-       player, and another 15 damage over the span of 5 seconds.*/
+    /* Piranha has no other unique perks other then doing damage */
     public void attack(){
         if((Player) getOneIntersectingObject(Player.class) != null){
             

@@ -16,11 +16,16 @@ public class Backpack extends Actor
         // Add your action code here.
     }
     
+<<<<<<< HEAD
     public void getItem(){
         // return inventory[weaponIndex];
     }
     
     public int getKiteRange(){
+=======
+    public int getItem(){
+        //return inventory[weaponIndex];
+>>>>>>> main
         return -1;
     }
 }

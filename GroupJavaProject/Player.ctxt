@@ -5,6 +5,11 @@ comment1.params=
 comment1.target=Player()
 comment2.params=
 comment2.target=void\ act()
+<<<<<<< HEAD
 comment3.params=
 comment3.target=void\ action()
+=======
+comment3.params=dir
+comment3.target=void\ setDirection(int)
+>>>>>>> main
 numComments=4
