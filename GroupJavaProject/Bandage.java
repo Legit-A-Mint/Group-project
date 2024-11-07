@@ -10,10 +10,17 @@ public class Bandage extends Item
 {
     public Bandage (int x, int y)
     {
+        /*
         itemImage = new GreenfootImage("Bandage.png");
         itemImage.scale(x,y);
         setImage(itemImage);
+        */
+        itemImage = new GreenfootImage(x, y);
+        itemImage.setColor(Color.RED);
+        itemImage.fill();
+        setImage(itemImage);
     }
+
     public void act()
     {
         // Add your action code here.

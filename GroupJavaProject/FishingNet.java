@@ -10,8 +10,14 @@ public class FishingNet extends Item
 {
     public FishingNet (int x, int y)
     {
+        /*
         itemImage = new GreenfootImage("FishingNet.png");
         itemImage.scale(x,y);
+        setImage(itemImage);
+        */
+        itemImage = new GreenfootImage(x, y);
+        itemImage.setColor(Color.GREEN);
+        itemImage.fill();
         setImage(itemImage);
     }
     public void act()
