@@ -101,4 +101,5 @@ public class ScrollableWorld extends Effects
             this.setLocation(this.getX(), this.getY() + moveSpeed);  
         }
     }
+    
 }
