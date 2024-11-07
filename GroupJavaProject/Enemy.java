@@ -22,7 +22,7 @@ public abstract class Enemy extends Effects
     public void act()
     {
         lookForTarget();
-        
+        moveWithWorld();
         if(this.hp <= 0 ){
             removeMe = true;
         }

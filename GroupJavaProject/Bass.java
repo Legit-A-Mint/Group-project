@@ -20,9 +20,7 @@ public class Bass extends Enemy
         damageToPlayer = 5; // Does 5 damage to the player
         
     }
-    public void act(){
-        //moveWithWorld();
-    }
+
     /* Bass has no other unique perks other then doing damage */
     public void attack(){
         if((Player) getOneIntersectingObject(Player.class) != null){
