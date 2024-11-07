@@ -21,7 +21,7 @@ public class Bass extends Enemy
         
     }
     public void act(){
-        moveWithWorld();
+        //moveWithWorld();
     }
     /* Bass has no other unique perks other then doing damage */
     public void attack(){
@@ -34,9 +34,5 @@ public class Bass extends Enemy
         
     }
     
-    public void moveWithWorld(){
-        ScrollableWorld sw = ((MyWorld)getWorld()).getScrollWorld();
-        
-        setLocation(sw.getX() + 100, sw.getY() + 100);
-    }
+    
 }

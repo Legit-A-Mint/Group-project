@@ -42,6 +42,11 @@ public abstract class Enemy extends Effects
             turnTowards(player.getX(), player.getY());
         }
     }
+    public void moveWithWorld(){
+        ScrollableWorld sw = ((MyWorld)getWorld()).getScrollWorld();
+        
+        setLocation(sw.getX() + 100, sw.getY() + 100);
+    }
     
     public void spawn(){
         
