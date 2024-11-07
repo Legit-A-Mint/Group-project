@@ -52,15 +52,13 @@ public class Player extends Effects
             setImage(playerImage);
         }
         
-    
-        if(Greenfoot.isKeyDown("a")){
+        if(Greenfoot.isKeyDown("a") && !Greenfoot.isKeyDown("d")){
             direction = -1;
         }
-        if(Greenfoot.isKeyDown("d")){
+        if(Greenfoot.isKeyDown("d") && !Greenfoot.isKeyDown("a")){
             direction = 1;
         }
-        
-        
+    
         actCount++;
         /*
         if(actCount % intelligence == 0){

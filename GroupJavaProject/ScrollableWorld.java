@@ -12,6 +12,7 @@ public class ScrollableWorld extends Effects
     protected int moveSpeed;
     protected final double WORLDSIZEFACTOR = 2;
     private int lastDir;
+    private int relativeX, relativeY;
     
     //test delete ltr
     private int testCounter;
@@ -33,8 +34,7 @@ public class ScrollableWorld extends Effects
     public void act()
     {
         testCounter++; 
-        handleCollision();
-        
+                
         //testing movement delete ltr
         if(testCounter < 100){
             moveWorld("UP");   
@@ -51,6 +51,7 @@ public class ScrollableWorld extends Effects
         else if(testCounter > 400){
             moveWorld("MANUAL");
         }
+        handleCollision();
     }
     
     //will have direction parameters
@@ -101,7 +102,7 @@ public class ScrollableWorld extends Effects
         //handle barriers for x direction
         //if location is too far from origin, move back
         if(this.getX() > worldImage.getWidth() - getWorld().getWidth()/2){
-            this.setLocation(this.getX() - (moveSpeed), this.getY());  
+            this.setLocation(this.getX() - moveSpeed, this.getY());  
         }
         if(this.getX() < - (getWorld().getWidth()/2)){
             this.setLocation(this.getX() + moveSpeed, this.getY());  
