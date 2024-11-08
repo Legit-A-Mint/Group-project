@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.target=Hitbox
 comment0.text=\r\n\ Full\ hitbox\ class\r\n\ \r\n\ @lumilk\r\n\ @1.0.0\r\n
-comment1.params=h\ w
-comment1.target=Hitbox(int,\ int)
+comment1.params=h\ w\ xOffset\ yOffset
+comment1.target=Hitbox(int,\ int,\ int,\ int)
 comment2.params=h\ w\ xOffset\ yOffset\ a
 comment2.target=Hitbox(int,\ int,\ int,\ int,\ greenfoot.Actor)
 comment3.params=h\ w\ xOffset\ yOffset\ a\ player

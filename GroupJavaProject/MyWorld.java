@@ -47,7 +47,12 @@ public class MyWorld extends World
         counter = new Counter("Counter", "db_1.png", 1, true, 360, 540);
         //addObject(counter, 360, 540);
         
-        addObject(new Hitbox(100, 100), 0, 100);
+        //border hitboxes
+        addObject(new Hitbox(getObjects(ScrollableWorld.class).get(0).getImage().getWidth(), 100, 0, -((getObjects(ScrollableWorld.class).get(0).getImage().getHeight())/2) - 50), 0, 0);
+        addObject(new Hitbox(getObjects(ScrollableWorld.class).get(0).getImage().getWidth(), 100, 0, ((getObjects(ScrollableWorld.class).get(0).getImage().getHeight())/2) + 50), 0, 0);
+        addObject(new Hitbox(100, getObjects(ScrollableWorld.class).get(0).getImage().getHeight(), (-(getObjects(ScrollableWorld.class).get(0).getImage().getWidth())/2) - 50, 0), 0, 0);
+        addObject(new Hitbox(100, getObjects(ScrollableWorld.class).get(0).getImage().getHeight(), ((getObjects(ScrollableWorld.class).get(0).getImage().getWidth())/2) + 50, 0), 0, 0);
+                
         
         //temp islands
         addObject(new Island(300, -300), 0, 0);

@@ -21,6 +21,10 @@ public class Hitbox extends SuperSmoothMover
             box.fill();
         }
         setImage(box);
+        
+        this.xOffset = xOffset;
+        this.yOffset = yOffset;
+        
         isPlayer = false;
     }
     
@@ -59,7 +63,6 @@ public class Hitbox extends SuperSmoothMover
     public void act()
     {
         //checkCollision();
-
         if(actor != null){
             moveWithActor();
         }
@@ -74,7 +77,7 @@ public class Hitbox extends SuperSmoothMover
 
     private void moveWithRelativeWorld(){
         ScrollableWorld w = ((MyWorld)(getWorld())).getObjects(ScrollableWorld.class).get(0);
-        setLocation(w.getX() + xOffset, w.getY() + xOffset);
+        setLocation(w.getX() + xOffset, w.getY() + yOffset);
     }
 
     public boolean checkCollision(){

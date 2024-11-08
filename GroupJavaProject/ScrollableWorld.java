@@ -12,7 +12,7 @@ public class ScrollableWorld extends Effects
 {
     protected GreenfootImage worldImage;
     protected int moveSpeed;
-    protected final double WORLDSIZEFACTOR = 2;
+    protected final double WORLDSIZEFACTOR = 1;
     private int lastDir;
     private int relativeX, relativeY;
 
@@ -24,10 +24,10 @@ public class ScrollableWorld extends Effects
         //worldImage.setColor(Color.GREEN);
         //worldImage.fill();
         worldImage = new GreenfootImage("bgtemp.png");
-        //worldImage.scale(worldImage.getWidth() * 2, worldImage.getHeight()* 2);
+        worldImage.scale((int)(worldImage.getWidth() * WORLDSIZEFACTOR), (int)(worldImage.getHeight() * WORLDSIZEFACTOR));
         setImage(worldImage);
         //set Movespeed (varies)
-        moveSpeed = 3;
+        moveSpeed = 6;
     }
 
     public void act()
