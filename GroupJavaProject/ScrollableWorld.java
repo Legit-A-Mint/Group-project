@@ -18,9 +18,6 @@ public class ScrollableWorld extends Effects
 
     private long getIntersectingObjectsTime;
 
-    //test delete ltr
-    private int testCounter;
-
     public ScrollableWorld(){
         //worldImage = new GreenfootImage((int)
         //(1024 * WORLDSIZEFACTOR), (int)(576 * WORLDSIZEFACTOR));
@@ -35,17 +32,13 @@ public class ScrollableWorld extends Effects
 
     public void act()
     {
-        testCounter++; 
-
-        moveWorld("MANUAL");
-
-        handleCollision();
+        moveWorld("DEBUG");
     }
 
     //will have direction parameters
     public void moveWorld(String direction){
         //manual movement mode, for debugging
-        if(direction.toUpperCase().equals("MANUAL")){
+        if(direction.toUpperCase().equals("DEBUG")){
             if(Greenfoot.isKeyDown("w")){
                 this.setLocation(this.getX(), this.getY() + moveSpeed);  
                 lastDir = 1;
@@ -86,6 +79,8 @@ public class ScrollableWorld extends Effects
         }
     }
 
+    
+    /*
     public void handleCollision(){
         //handle barriers for x direction
         //if location is too far from origin, move back
@@ -101,7 +96,7 @@ public class ScrollableWorld extends Effects
         if(this.getY() < - (getWorld().getHeight()/2)){
             this.setLocation(this.getX(), this.getY() + moveSpeed);  
         }
-    }
+    }*/
 
     /**
     public void repel(){
@@ -136,7 +131,6 @@ public class ScrollableWorld extends Effects
             }
         }
 
-        //
         for(Actor a : nonPlayerHitboxes){
             GreenfootImage imgSizeObject = a.getImage();
             GreenfootImage imgSizeOfPlayer = nonPlayerHitboxes.get(0).getImage();

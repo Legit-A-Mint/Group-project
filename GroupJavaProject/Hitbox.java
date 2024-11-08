@@ -1,5 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*;
 /**
  * Full hitbox class
  * 
@@ -14,6 +13,16 @@ public class Hitbox extends SuperSmoothMover
     private static final boolean visible = true;
     
     private boolean isPlayer;
+    public Hitbox(int h, int w, int xOffset, int yOffset){
+        box = new GreenfootImage(h, w);
+        box.setColor(Color.RED);
+        box.setTransparency(100); //less distracting when turned on
+        if(visible){
+            box.fill();
+        }
+        setImage(box);
+        isPlayer = false;
+    }
     
     public Hitbox(int h, int w, int xOffset, int yOffset, Actor a){
         box = new GreenfootImage(h, w);
@@ -49,7 +58,7 @@ public class Hitbox extends SuperSmoothMover
 
     public void act()
     {
-        checkCollision();
+        //checkCollision();
 
         if(actor != null){
             moveWithActor();
