@@ -6,12 +6,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class FishingRod extends Shop
+public class FishingRod extends Item
 {
-    /**
-     * Act - do whatever the FishingRod wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public FishingRod (int x, int y)
+    {
+        itemImage = new GreenfootImage("FishingRod.png");
+        itemImage.scale(x,y);
+        setImage(itemImage);
+    }
     public void act()
     {
         // Add your action code here.
