@@ -12,6 +12,9 @@ public class MyWorld extends World
     private ScrollableWorld sw;
     private Whale whale;
     
+    private int waveCount, actCount;
+    private boolean spawnOnce;
+    
     public MyWorld(){  
         //create an unbounded world 
         super(1024, 576, 1, false);
@@ -22,25 +25,99 @@ public class MyWorld extends World
         player = new Player();
         sw = new ScrollableWorld();
         
+        waveCount = -1;
+        actCount = 0;
+        spawnOnce = true;
+        
         
         addObject(sw, this.getWidth()/2, this.getHeight()/2); 
         addObject(player, this.getWidth()/2, this.getHeight()/2);
-        bass = new Bass();
-        addObject(bass, 120, 120);
         
-        whale = new Whale();
-        addObject(whale, 120, 120);
         
         
         //addObject(new TestButton(), 100, 100);
         addObject(new Slider("TestSlider", "rail.png", "circle.png"), 200, 500);
     }
     
+     
     public void act(){
+        actCount++;
+        
+        waveTracking();
+        switch(waveCount) {
+            case(0):
+            
+                // Manual wave simulator
+                /**
+                if(actCount == 300){
+                    spawnOnce = true;
+                    actCount = 0;
+                }
+                */
+                
+                if(spawnOnce){
+                    spawnOnce = false;
+                    for(int i = 0; i < 2; i++){
+                        addObject(new Bass(), -100, -100);
+                    }
+                    
+                    addObject(new Whale(), -100, -100);
+                }
+                break;
+                
+            case(1):
+            
+                if(spawnOnce){
+                    spawnOnce = false;
+                    for(int i = 0; i < 3; i++){
+                        addObject(new Bass(), -100, -100);
+                    }
+                }
+            
+            
+            case(2):
+            
+                if(spawnOnce){
+                    spawnOnce = false;
+                    for(int i = 0; i < 3; i++){
+                        addObject(new Bass(), -100, -100);
+                    }
+                }
+            
+            
+            case(3):
+            
+            
+            case(4):
+            
+            
+            case(5):
+            
+            
+            case(6):
+        }
         //debug System out prints out non inspectables
         
         // System.out.print(....);
         
         
     }
+    
+    public void waveTracking(){
+        if(actCount >= 1500 || waveClear()){
+            spawnOnce = true;
+            waveCount++;
+            actCount = 0;
+        }
+    }    
+    
+    public boolean waveClear()
+    {
+        if(getObjects(Enemy.class).size() == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
 }
