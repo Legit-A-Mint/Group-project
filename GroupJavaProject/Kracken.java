@@ -26,8 +26,4 @@ public class Kracken extends Enemy
     public void damaged(){
         
     }
-    
-    public boolean checkForCollision(){
-       return false; 
-    }
 }
