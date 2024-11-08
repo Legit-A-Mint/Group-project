@@ -46,7 +46,7 @@ public class MyWorld extends World
         addObject(new Island(300, 300), 0, 0);
         addObject(new Island(-300, 300), 0, 0);
         addObject(new Island(-300, -300), 0, 0);
-        addObject(new Hitbox(200, 200, 200, 340), 0, 0);
+        // addObject(new Hitbox(200, 200, 200, 340), 0, 0);
         
         //always have ui elements above the simulation
         setPaintOrder(Interface.class, Hitbox.class);

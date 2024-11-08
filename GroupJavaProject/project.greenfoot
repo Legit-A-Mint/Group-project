@@ -50,39 +50,27 @@ dependency23.type=UsesDependency
 dependency24.from=Player
 dependency24.to=MyWorld
 dependency24.type=UsesDependency
-<<<<<<< Updated upstream
-dependency25.from=Hitbox
-dependency25.to=ScrollableWorld
-dependency25.type=UsesDependency
-dependency26.from=Hitbox
-dependency26.to=MyWorld
-dependency26.type=UsesDependency
-dependency27.from=Island
-dependency27.to=Hitbox
-dependency27.type=UsesDependency
-dependency28.from=Island
-dependency28.to=ScrollableWorld
-dependency28.type=UsesDependency
-dependency29.from=Slider
-dependency29.to=SliderObject
-dependency29.type=UsesDependency
-=======
 dependency25.from=Player
 dependency25.to=ScrollableWorld
 dependency25.type=UsesDependency
-dependency26.from=Island
-dependency26.to=Hitbox
+dependency26.from=Hitbox
+dependency26.to=ScrollableWorld
 dependency26.type=UsesDependency
-dependency27.from=Island
-dependency27.to=ScrollableWorld
+dependency27.from=Hitbox
+dependency27.to=MyWorld
 dependency27.type=UsesDependency
-dependency28.from=Slider
-dependency28.to=SliderObject
+dependency28.from=Island
+dependency28.to=Hitbox
 dependency28.type=UsesDependency
->>>>>>> Stashed changes
+dependency29.from=Island
+dependency29.to=ScrollableWorld
+dependency29.type=UsesDependency
 dependency3.from=MyWorld
 dependency3.to=ScrollableWorld
 dependency3.type=UsesDependency
+dependency30.from=Slider
+dependency30.to=SliderObject
+dependency30.type=UsesDependency
 dependency4.from=MyWorld
 dependency4.to=Whale
 dependency4.type=UsesDependency
@@ -96,26 +84,17 @@ dependency7.from=MyWorld
 dependency7.to=Island
 dependency7.type=UsesDependency
 dependency8.from=MyWorld
-dependency8.to=Hitbox
+dependency8.to=Interface
 dependency8.type=UsesDependency
 dependency9.from=MyWorld
-dependency9.to=Interface
+dependency9.to=Hitbox
 dependency9.type=UsesDependency
-<<<<<<< Updated upstream
-editor.fx.0.height=890
-editor.fx.0.width=1033
-editor.fx.0.x=335
-editor.fx.0.y=114
-height=1096
-package.numDependencies=29
-=======
 editor.fx.0.height=1024
 editor.fx.0.width=865
 editor.fx.0.x=847
 editor.fx.0.y=0
-height=1033
-package.numDependencies=28
->>>>>>> Stashed changes
+height=1024
+package.numDependencies=30
 package.numTargets=30
 project.charset=UTF-8
 publish.hasSource=false
@@ -342,11 +321,7 @@ target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-<<<<<<< Updated upstream
-width=1936
-=======
-width=1721
->>>>>>> Stashed changes
+width=865
 world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=0
