@@ -103,4 +103,18 @@ public class ScrollableWorld extends Effects
         }
     }
     
+    public void repel(){
+        if(lastDir == 1){
+            this.setLocation(this.getX(), this.getY() - moveSpeed);
+        }
+        else if(lastDir == 2){
+            this.setLocation(this.getX() - moveSpeed, this.getY());
+        }
+        else if(lastDir == 3){
+            this.setLocation(this.getX(), this.getY() + moveSpeed);
+        }
+        else if(lastDir == 4){
+            this.setLocation(this.getX() + moveSpeed, this.getY()); 
+        }
+    }
 }

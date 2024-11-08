@@ -26,7 +26,9 @@ public class Player extends Effects
     private double distanceToActor;
     
     private int relativeX, relativeY;
-    
+    private Hitbox h;
+    private boolean createdHitbox;
+    private boolean collided;
     public Player(){
         playerImage = new GreenfootImage("shark.png");
         reflectedPlayerImage = new GreenfootImage("shark.png");
@@ -43,8 +45,24 @@ public class Player extends Effects
         maxSpeed = (1.25 + moddedSpeed) * CPU;
         speed = (maxSpeed) * CPU;
         */
+       
+        createdHitbox = false;
     }
     public void act(){
+        //create hitbox
+        if(!createdHitbox){
+            h = new Hitbox(playerImage.getWidth() - 30, 
+            playerImage.getHeight() - 60, 0, 0, this);
+            
+            getWorld().addObject(h, this.getX(), this.getY());
+            createdHitbox = true;
+        }
+       
+        checkCollision();
+        repelMe();
+        
+        
+        
         // init backpack here, not sure how
         if(direction == -1){}
             if(direction == -1){
@@ -66,9 +84,25 @@ public class Player extends Effects
         if(actCount % intelligence == 0){
             action();
         }*/
+        
+        
+    
     }
     public void setDirection(int dir){
         direction = dir;
+    }
+    
+    
+    public void checkCollision(){
+        if(h != null){
+            collided = h.checkCollision();   
+        }
+    }
+    public void repelMe(){
+        if(collided == true){
+            ((MyWorld)getWorld()).getObjects(ScrollableWorld.class).get(0).repel();
+            collided = false;
+        }
     }
     
     /*

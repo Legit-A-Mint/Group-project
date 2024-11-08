@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * me
- * Version 1.0.2
+ * Version 1.0.3
  */
 public class MyWorld extends World
 {   
@@ -41,8 +41,14 @@ public class MyWorld extends World
         addObject(new Button("test5", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, false, 1), 255, 470);
         addObject(new Slider("TestSlider", "rail.png", "circle.png", 1, 130), 155, 540);
         
+        //temp islands
+        addObject(new Island(300, -300), 0, 0);
+        addObject(new Island(300, 300), 0, 0);
+        addObject(new Island(-300, 300), 0, 0);
+        addObject(new Island(-300, -300), 0, 0);
+        
         //always have ui elements above the simulation
-        setPaintOrder(Interface.class);
+        setPaintOrder(Interface.class, Hitbox.class);
         
     }
     
@@ -50,7 +56,7 @@ public class MyWorld extends World
     public void act(){
         actCount++;
         
-        waveTracking();
+        //waveTracking();
         switch(waveCount) {
             case(0):
             
