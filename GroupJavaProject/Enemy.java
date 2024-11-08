@@ -45,10 +45,22 @@ public abstract class Enemy extends Effects
     public void moveWithWorld(){
         ScrollableWorld sw = ((MyWorld)getWorld()).getScrollWorld();
         
-        setLocation(sw.getX() + 100, sw.getY() + 100);
+        setLocation(sw.getX() + relativeX , sw.getY() + relativeY);
     }
     
-    public void spawn(){
+    public void spawn(MyWorld world) {
+        ScrollableWorld scrollableWorld = world.getScrollWorld();
         
+            if (scrollableWorld != null) {
+            int worldWidth = scrollableWorld.getWorldImageWidth();
+            int worldHeight = scrollableWorld.getWorldImageHeight();
+        
+            // Generate random x and y coordinates within the scrollable world image bounds
+            int spawnX = Greenfoot.getRandomNumber(worldWidth);
+            int spawnY = Greenfoot.getRandomNumber(worldHeight);
+        
+            // Add this enemy to the world at the generated coordinates
+            world.addObject(this, spawnX, spawnY);
+        }
     }
 }
