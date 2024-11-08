@@ -145,22 +145,23 @@ public class ScrollableWorld extends Effects
 
             if(p.getX() - imgSizeOfPlayer.getWidth()/2 < a.getX() + imgSizeObject.getWidth()/2){
                 System.out.println("left");
-
-                this.setLocation(this.getX() - moveSpeed, this.getY());  
-            }
-
-            if(p.getX() + imgSizeOfPlayer.getWidth()/2 < a.getX() - imgSizeObject.getWidth()/2){
-                System.out.println("right");
+                System.out.println(p.getX());
+                System.out.println(a.getX());
                 this.setLocation(this.getX() + moveSpeed, this.getY());  
             }
 
+            if(p.getX() + imgSizeOfPlayer.getWidth()/2 < a.getX() - imgSizeObject.getWidth()/2){
+                //System.out.println("right");
+                this.setLocation(this.getX() - moveSpeed, this.getY());  
+            }
+
             if(p.getY() - imgSizeOfPlayer.getWidth()/2 > a.getY() + imgSizeObject.getWidth()/2){
-                System.out.println("up");
+                //System.out.println("up");
                 this.setLocation(this.getX(), this.getY() + moveSpeed);
             }
 
             if(p.getY() + imgSizeOfPlayer.getWidth()/2 < a.getY() - imgSizeObject.getWidth()/2){
-                System.out.println("down");
+                //System.out.println("down");
                 this.setLocation(this.getX(), this.getY() - moveSpeed);  
             }
 

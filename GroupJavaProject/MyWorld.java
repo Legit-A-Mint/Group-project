@@ -58,7 +58,7 @@ public class MyWorld extends World
         actCount++;
         // System.out.println(getObjects(Hitbox.class).size());
         
-        //waveTracking();
+        waveTracking();
         switch(waveCount) {
             case(0):
             

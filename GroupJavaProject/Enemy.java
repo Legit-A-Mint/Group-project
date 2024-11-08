@@ -96,8 +96,8 @@ public abstract class Enemy extends Effects
         relativeX += speedX;
         relativeY += speedY;
 
-        //pushDistX += cordsVector[0];
-        //pushDistY += cordsVector[1];
+        pushDistX += cordsVector[0];
+        pushDistY += cordsVector[1];
 
         //Sets the location of object based on the relative position in ScrollableWorld
         //SpawnX and SpawnY handles spawn location
