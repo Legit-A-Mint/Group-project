@@ -3,16 +3,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class SliderObject here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @lumilk
+ * @version 1.0.0
  */
 public class SliderObject extends Interface
 {
+    private GreenfootImage img;
     private int maxOffset;
     private int refX, refY; //refers to the reference point of Slider
  
-    public SliderObject(int max, int refX, String image){
-        setImage(new GreenfootImage(image));
+    public SliderObject(int max, int refX, String image, double scale){
+        img = new GreenfootImage(image);
+        setImage(img);
+        img.scale((int)(img.getWidth() * scale), 
+        (int)(img.getHeight() * scale));
         maxOffset = max;
         this.refX = refX;
     }

@@ -16,20 +16,27 @@ public class Slider extends Interface
     private SliderObject slider;
     private String name;
     private String sliderImage;
+    private double scale;
+    private int offset;
     
     private boolean createdSlider;
     
-    public Slider(String name, String image, String sliderImage){
+    public Slider(String name, String image, String sliderImage, double scale, int offset){
         this.name = name;
         this.sliderImage = sliderImage;
+        this.scale = scale;
+        this.offset = offset;
         sliderBackground = new GreenfootImage(image);
+        sliderBackground.scale((int)(sliderBackground.getWidth() * scale), 
+        (int)(sliderBackground.getHeight() * scale));
         setImage(sliderBackground);
+        
     }
     public void act()
     {
         if(!createdSlider){
-            //create slider with max offset of 85
-            slider = new SliderObject(129, this.getX(), sliderImage);
+            //create slider with max offset
+            slider = new SliderObject(offset, this.getX(), sliderImage, scale);
             getWorld().addObject(slider, this.getX(), this.getY());
             createdSlider = true;
         }

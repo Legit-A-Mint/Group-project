@@ -1,10 +1,16 @@
 #BlueJ class context
 comment0.target=Button
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Button\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=type
-comment1.target=Button(int)
-comment2.params=
-comment2.target=void\ act()
-comment3.params=
-comment3.target=boolean\ isClicked()
-numComments=4
+comment1.params=name
+comment1.target=Button(java.lang.String)
+comment2.params=name\ images\ isAnimated\ scale
+comment2.target=Button(java.lang.String,\ java.lang.String[],\ boolean,\ double)
+comment3.params=name\ width\ height\ colors\ isAnimated
+comment3.target=Button(java.lang.String,\ int,\ int,\ greenfoot.Color[],\ boolean)
+comment4.params=
+comment4.target=void\ act()
+comment5.params=
+comment5.target=boolean\ checkClicked()
+comment6.params=
+comment6.target=void\ doAnimation()
+numComments=7

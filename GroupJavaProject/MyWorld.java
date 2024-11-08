@@ -17,6 +17,7 @@ public class MyWorld extends World
     
     public MyWorld(){  
         //create an unbounded world 
+        //width and height create the viewport
         super(1024, 576, 1, false);
         img = new GreenfootImage(this.getWidth(), this.getHeight());
         img.setColor(Color.BLUE);
@@ -35,8 +36,12 @@ public class MyWorld extends World
         
         
         
-        //addObject(new TestButton(), 100, 100);
-        addObject(new Slider("TestSlider", "rail.png", "circle.png"), 200, 500);
+        addObject(new Button("test"), 600, 500);
+        addObject(new Button("test2", 100, 50, new Color[] {Color.BLACK, Color.RED, Color.BLUE}, true), 800, 500);
+        addObject(new Button("test3", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 0.98), 55, 470);
+        addObject(new Button("test4", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 0.98), 155, 470);
+        addObject(new Button("test5", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, false, 0.98), 255, 470);
+        addObject(new Slider("TestSlider", "rail.png", "circle.png", 1, 130), 155, 540);
     }
     
      

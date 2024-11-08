@@ -27,9 +27,10 @@ public class ScrollableWorld extends Effects
         //worldImage.setColor(Color.GREEN);
         //worldImage.fill();
         worldImage = new GreenfootImage("bgtemp.png");
+        //worldImage.scale(worldImage.getWidth() * 2, worldImage.getHeight()* 2);
         setImage(worldImage);
         //set Movespeed (varies)
-        moveSpeed = 5;
+        moveSpeed = 3;
     }
     
     public void act()
