@@ -6,20 +6,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Harpoon extends Item
+public class Harpoon extends Shop
 {
-    public Harpoon (int x, int y)
-    {
-        /*
-        itemImage = new GreenfootImage("Harpoon.png");
-        itemImage.scale(x,y);
-        setImage(itemImage);
-        */
-        itemImage = new GreenfootImage(x, y);
-        itemImage.setColor(Color.BLUE);
-        itemImage.fill();
-        setImage(itemImage);
-    }
+    /**
+     * Act - do whatever the Harpoon wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         // Add your action code here.
