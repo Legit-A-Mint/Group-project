@@ -1,15 +1,8 @@
 #BlueJ class context
 comment0.target=SuperFishingRod
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ SuperFishingRod\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-<<<<<<< HEAD
 comment1.params=x\ y
 comment1.target=SuperFishingRod(int,\ int)
 comment2.params=
 comment2.target=void\ act()
 numComments=3
-=======
-comment1.params=
-comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ SuperFishingRod\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
-numComments=2
->>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06

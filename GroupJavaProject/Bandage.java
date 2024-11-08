@@ -6,12 +6,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bandage extends Shop
+public class Bandage extends Item
 {
-    /**
-     * Act - do whatever the Bandage wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public Bandage (int x, int y)
+    {
+        /*
+        itemImage = new GreenfootImage("Bandage.png");
+        itemImage.scale(x,y);
+        setImage(itemImage);
+        */
+        itemImage = new GreenfootImage(x, y);
+        itemImage.setColor(Color.RED);
+        itemImage.fill();
+        setImage(itemImage);
+    }
+
     public void act()
     {
         // Add your action code here.
