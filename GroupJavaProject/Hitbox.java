@@ -17,22 +17,49 @@ public class Hitbox extends SuperSmoothMover
         box.setColor(Color.RED);
         box.setTransparency(100); //less distracting when turned on
         if(visible){
-             box.fill();
+            box.fill();
         }
         setImage(box);
-        
+
         this.xOffset = xOffset;
         this.yOffset = yOffset;
         actor = a;
     }
+
+    public Hitbox(int h, int w, int xOffset, int yOffset){
+        box = new GreenfootImage(h, w);
+        box.setColor(Color.RED);
+        box.setTransparency(100); //less distracting when turned on
+        if(visible){
+            box.fill();
+        }
+        setImage(box);
+
+        this.xOffset = xOffset;
+        this.yOffset = yOffset;
+    }
+
     public void act()
     {
         checkCollision();
-        moveWithActor();
-    }
+
+        if(actor != null){
+            moveWithActor();
+        }
+        else{
+            moveWithRelativeWorld();
+        }
+    }  
+
     private void moveWithActor(){
         setLocation(actor.getX() + xOffset, actor.getY() + yOffset);
     }
+
+    private void moveWithRelativeWorld(){
+        ScrollableWorld w = ((MyWorld)(getWorld())).getObjects(ScrollableWorld.class).get(0);
+        setLocation(w.getX() + xOffset, w.getY() + xOffset);
+    }
+
     public boolean checkCollision(){
         return(this.isTouching(Hitbox.class));
     }
