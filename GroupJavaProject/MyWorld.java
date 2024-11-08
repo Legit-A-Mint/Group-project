@@ -117,7 +117,7 @@ public class MyWorld extends World
         // System.out.println(getObjects(Hitbox.class).size());
 >>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06
         
-        //waveTracking();
+        waveTracking();
         switch(waveCount) {
             case(0):
             
