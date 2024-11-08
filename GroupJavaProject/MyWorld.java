@@ -14,6 +14,8 @@ public class MyWorld extends World
     
     private int waveCount, actCount;
     private boolean spawnOnce;
+    private Slider slider;
+    private Counter counter;
     
     public MyWorld(){  
         //create an unbounded world 
@@ -38,8 +40,13 @@ public class MyWorld extends World
         //addObject(new Button("test2", 100, 50, new Color[] {Color.BLACK, Color.RED, Color.BLUE}, true), 800, 500);
         addObject(new Button("test3", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 1), 55, 470);
         addObject(new Button("test4", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 1), 155, 470);
-        addObject(new Button("test5", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, false, 1), 255, 470);
-        addObject(new Slider("TestSlider", "rail.png", "circle.png", 1, 130), 155, 540);
+        addObject(new Button("test5", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 1), 255, 470);
+        
+        //slider and counter
+        slider = new Slider("TestSlider", "rail.png", "circle.png", 1, 130);
+        addObject(slider, 155, 240);
+        counter = new Counter("Counter", "pb_1.png", 1, true, 360, 540);
+        addObject(counter, 360, 540);
         
         //temp islands
         addObject(new Island(300, -300), 0, 0);
@@ -57,7 +64,7 @@ public class MyWorld extends World
     public void act(){
         actCount++;
         
-        //waveTracking();
+        waveTracking();
         switch(waveCount) {
             case(0):
             

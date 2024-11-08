@@ -1,11 +1,14 @@
 import greenfoot.*;  
 
-public abstract class Interface extends Actor {
+public abstract class Interface extends SuperSmoothMover{
     private int transparency = 255;
     
     //static creates a global timer for all subclasses
     private static int lastInteractionTime = 0;
     private final int MAX_IDLE_TIME = 2400;
+    
+    //inherited variables
+    protected String name;
 
     public void act() {
         if(isUserInteracting()){ 
