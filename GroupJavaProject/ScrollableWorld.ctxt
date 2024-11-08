@@ -1,6 +1,10 @@
 #BlueJ class context
 comment0.target=ScrollableWorld
+<<<<<<< HEAD
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ ScrollableWorld\ here.\r\n\ \r\n\ @lumilk\ and\ Andrew\r\n\ @1.0.0\r\n
+=======
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ScrollableWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+>>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06
 comment1.params=
 comment1.target=ScrollableWorld()
 comment2.params=

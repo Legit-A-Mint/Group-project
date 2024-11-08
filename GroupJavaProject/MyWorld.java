@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-import java.util.ArrayList;
+
 /**
  * me
  * Version 1.0.3
@@ -14,18 +14,23 @@ public class MyWorld extends World
     
     private int waveCount, actCount;
     private boolean spawnOnce;
+<<<<<<< HEAD
     private Slider slider;
     private Counter counter;
+=======
+>>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06
     
     public MyWorld(){  
         //create an unbounded world 
+        //width and height create the viewport
         super(1024, 576, 1, false);
-        img = new GreenfootImage(getWidth(), getHeight());
+        img = new GreenfootImage(this.getWidth(), this.getHeight());
         img.setColor(Color.BLUE);
         img.fill();
         setBackground(img);
         player = new Player();
         sw = new ScrollableWorld();
+<<<<<<< HEAD
         
         waveCount = -1;
         actCount = 0;
@@ -74,22 +79,63 @@ public class MyWorld extends World
         addObject(new Bandage(60,60), getWidth()/2, getHeight()-50);
         addObject(new FishingNet(60,60), getWidth()/2 - 100, getHeight()-50);
         addObject(new Harpoon(60,60), getWidth()/2 - 200, getHeight()-50);
+=======
+        
+        waveCount = -1;
+        actCount = 0;
+        spawnOnce = true;
+        
+        
+        addObject(sw, this.getWidth()/2, this.getHeight()/2); 
+        addObject(player, this.getWidth()/2, this.getHeight()/2);
+        
+        //addObject(new Button("test"), 600, 500);
+        //addObject(new Button("test2", 100, 50, new Color[] {Color.BLACK, Color.RED, Color.BLUE}, true), 800, 500);
+        addObject(new Button("test3", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 1), 55, 470);
+        addObject(new Button("test4", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 1), 155, 470);
+        addObject(new Button("test5", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, false, 1), 255, 470);
+        addObject(new Slider("TestSlider", "rail.png", "circle.png", 1, 130), 155, 540);
+        
+        //temp islands
+        addObject(new Island(300, -300), 0, 0);
+        addObject(new Island(300, 300), 0, 0);
+        addObject(new Island(-300, 300), 0, 0);
+        addObject(new Island(-300, -300), 0, 0);
+        // addObject(new Hitbox(200, 200, 200, 340), 0, 0);
+        
+        //always have ui elements above the simulation
+        setPaintOrder(Interface.class, Hitbox.class);
+        
+>>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06
     }
     
+     
     public void act(){
         actCount++;
+<<<<<<< HEAD
+=======
+        // System.out.println(getObjects(Hitbox.class).size());
+>>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06
         
         //waveTracking();
         switch(waveCount) {
             case(0):
             
                 // Manual wave simulator
+<<<<<<< HEAD
                 
+=======
+                /**
+>>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06
                 if(actCount == 300){
                     spawnOnce = true;
                     actCount = 0;
                 }
+<<<<<<< HEAD
                 
+=======
+                */
+>>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06
                 
                 if(spawnOnce){
                     spawnOnce = false;
@@ -130,13 +176,33 @@ public class MyWorld extends World
             
             case(6):
         }
+<<<<<<< HEAD
 
         //debug System out prints out non inspectables
         
         // System.out.print(....);
+=======
+        //debug System out prints out non inspectables
+        
+        
+>>>>>>> 9c89a9a7b6de298c8da53c7c85f8600a0e44ab06
     }
     
-    public Player getPlayer(){
-        return player; 
+    public void waveTracking(){
+        if(actCount >= 1500 || waveClear()){
+            spawnOnce = true;
+            waveCount++;
+            actCount = 0;
+        }
+    }    
+    
+    public boolean waveClear()
+    {
+        if(getObjects(Enemy.class).size() == 0){
+            return true;
+        }else{
+            return false;
+        }
     }
+    
 }
