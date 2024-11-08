@@ -8,4 +8,6 @@ comment2.target=void\ attack()
 comment2.text=\ Pufferfish\ will\ do\ a\ total\ of\ 25\ damage.\ 10\ damage\ when\ it\ first\ hit\ the\r\nplayer,\ and\ another\ 15\ damage\ over\ the\ span\ of\ 5\ seconds.
 comment3.params=
 comment3.target=void\ damaged()
-numComments=4
+comment4.params=
+comment4.target=boolean\ checkForCollision()
+numComments=5

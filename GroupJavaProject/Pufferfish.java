@@ -26,4 +26,8 @@ public class Pufferfish extends Enemy
     public void damaged(){
         
     }
+    
+    public boolean checkForCollision(){
+       return false; 
+    }
 }
