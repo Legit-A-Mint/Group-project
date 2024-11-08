@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ScrollableWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ ScrollableWorld\ here.\r\n\ \r\n\ @lumilk\ and\ Andrew\r\n\ @1.0.0\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ ScrollableWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=ScrollableWorld()
 comment2.params=
@@ -9,7 +9,4 @@ comment3.params=direction
 comment3.target=void\ moveWorld(java.lang.String)
 comment4.params=
 comment4.target=void\ handleCollision()
-comment5.params=
-comment5.target=void\ repel()
-comment5.text=\r\n\ \ \ \ public\ void\ repel(){\r\n\ \ \ \ if(lastDir\ \=\=\ 1){\r\n\ \ \ \ this.setLocation(this.getX(),\ this.getY()\ -\ moveSpeed);\r\n\ \ \ \ }\r\n\ \ \ \ else\ if(lastDir\ \=\=\ 2){\r\n\ \ \ \ this.setLocation(this.getX()\ -\ moveSpeed,\ this.getY());\r\n\ \ \ \ }\r\n\ \ \ \ else\ if(lastDir\ \=\=\ 3){\r\n\ \ \ \ this.setLocation(this.getX(),\ this.getY()\ +\ moveSpeed);\r\n\ \ \ \ }\r\n\ \ \ \ else\ if(lastDir\ \=\=\ 4){\r\n\ \ \ \ this.setLocation(this.getX()\ +\ moveSpeed,\ this.getY());\ \r\n\ \ \ \ }\r\n\ \ \ \ }\r\n
-numComments=6
+numComments=5
