@@ -30,6 +30,10 @@ public class MyWorld extends World
         
         whale = new Whale();
         addObject(whale, 120, 120);
+        
+        
+        //addObject(new TestButton(), 100, 100);
+        addObject(new Slider("TestSlider", "rail.png", "circle.png"), 200, 500);
     }
     
     public void act(){

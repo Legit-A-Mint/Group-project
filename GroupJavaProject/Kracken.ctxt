@@ -8,4 +8,6 @@ comment2.target=void\ attack()
 comment2.text=\ Kracken\ will\ stun\ the\ player\ reducing\ the\ fire\ rate\ and\ movement\ speed\ by\r\nhalf.
 comment3.params=
 comment3.target=void\ damaged()
-numComments=4
+comment4.params=
+comment4.target=boolean\ checkForCollision()
+numComments=5
