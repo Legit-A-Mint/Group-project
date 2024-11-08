@@ -15,13 +15,14 @@ public class Island extends SuperSmoothMover
     public Island(int relX, int relY){
         relativeX = relX;
         relativeY = relY;
-        
+
         img = new GreenfootImage(200, 200);     
         img.setColor(Color.GREEN);
         img.fill();
         setImage(img);
         createdHitBox = false;
     }
+
     public void act()
     {
         if(!createdHitBox){
@@ -31,10 +32,15 @@ public class Island extends SuperSmoothMover
         }
         moveWithWorld();
     }
+
     public void moveWithWorld(){
         ScrollableWorld sw = getWorld().getObjects(ScrollableWorld.class).get(0);
-        
+
         //Sets the location of object based on the relative position in ScrollableWorld
         setLocation(sw.getX() + relativeX, sw.getY() + relativeY);
+    }
+
+    public Actor returnHitbox(){
+        return h;
     }
 }

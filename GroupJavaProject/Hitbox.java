@@ -12,6 +12,9 @@ public class Hitbox extends SuperSmoothMover
     private Actor actor;
     private int xOffset, yOffset;
     private static final boolean visible = true;
+    
+    private boolean isPlayer;
+    
     public Hitbox(int h, int w, int xOffset, int yOffset, Actor a){
         box = new GreenfootImage(h, w);
         box.setColor(Color.RED);
@@ -24,9 +27,11 @@ public class Hitbox extends SuperSmoothMover
         this.xOffset = xOffset;
         this.yOffset = yOffset;
         actor = a;
+        
+        isPlayer = false;
     }
-
-    public Hitbox(int h, int w, int xOffset, int yOffset){
+    
+    public Hitbox(int h, int w, int xOffset, int yOffset, Actor a, boolean player){
         box = new GreenfootImage(h, w);
         box.setColor(Color.RED);
         box.setTransparency(100); //less distracting when turned on
@@ -37,6 +42,9 @@ public class Hitbox extends SuperSmoothMover
 
         this.xOffset = xOffset;
         this.yOffset = yOffset;
+        actor = a;
+        
+        isPlayer = player;
     }
 
     public void act()
@@ -62,5 +70,9 @@ public class Hitbox extends SuperSmoothMover
 
     public boolean checkCollision(){
         return(this.isTouching(Hitbox.class));
+    }
+    
+    public boolean returnPlayer(){
+        return isPlayer;
     }
 }
