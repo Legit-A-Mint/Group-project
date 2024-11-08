@@ -50,7 +50,8 @@ public class Effects extends SuperSmoothMover
         
         for(int i = 0; i < image.length; i++){
             flip[i] = new GreenfootImage(image[i]);
-            flip[i].mirrorHorizontally();
+            //flip[i].mirrorHorizontally();
+            flip[i].mirrorVertically();
         }
 
         if(direction == 1){
