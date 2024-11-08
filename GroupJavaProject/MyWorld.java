@@ -56,6 +56,7 @@ public class MyWorld extends World
      
     public void act(){
         actCount++;
+        // System.out.println(getObjects(Hitbox.class).size());
         
         //waveTracking();
         switch(waveCount) {
@@ -109,8 +110,6 @@ public class MyWorld extends World
             case(6):
         }
         //debug System out prints out non inspectables
-        
-        // System.out.print(....);
         
         
     }
