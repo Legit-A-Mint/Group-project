@@ -21,6 +21,7 @@ public class SliderObject extends Interface
         this.refX = refX;
     }
     public void act(){
+        super.act();
         if (Greenfoot.mouseDragged(this)){
             MouseInfo m = Greenfoot.getMouseInfo();
             
@@ -37,6 +38,11 @@ public class SliderObject extends Interface
             }
         }
     }
-    
-    
+    public void setTransparency(double t){
+        img.setTransparency((int)(255 * t));
+    }
+    @Override
+    protected boolean isUserInteracting() {
+        return Greenfoot.mouseMoved(this);
+    }
 }

@@ -34,11 +34,19 @@ public class Slider extends Interface
     }
     public void act()
     {
+        super.act();
         if(!createdSlider){
             //create slider with max offset
             slider = new SliderObject(offset, this.getX(), sliderImage, scale);
             getWorld().addObject(slider, this.getX(), this.getY());
             createdSlider = true;
         }
+    }
+    public void setTransparency(double t){
+        sliderBackground.setTransparency((int)(255 * t));
+    }
+    @Override
+    protected boolean isUserInteracting() {
+        return Greenfoot.mouseMoved(this);
     }
 }

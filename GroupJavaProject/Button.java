@@ -61,12 +61,12 @@ public class Button extends Interface
         setImage(img[0]);
     }
     public void act(){
+        super.act();
         doAnimation();
-    }
-    
+    }    
     public boolean checkClicked(){
         if(Greenfoot.mouseClicked(this)){
-            System.out.println("Clicked button " + name);
+            //System.out.println("Clicked button " + name);
             return true;
         }
         else{ 
@@ -93,12 +93,16 @@ public class Button extends Interface
             }
             
             if(checkClicked()){
-                animTimer = 10;
+                animTimer = 15;
                 setImage(img[2]);
             }
         }
         else{
             checkClicked();
         }
+    }
+    @Override
+    protected boolean isUserInteracting() {
+        return Greenfoot.mouseMoved(this);
     }
 }

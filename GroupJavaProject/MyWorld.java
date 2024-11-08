@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * me
- * Version 1.0.1
+ * Version 1.0.2
  */
 public class MyWorld extends World
 {   
@@ -40,6 +40,10 @@ public class MyWorld extends World
         addObject(new Button("test4", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 1), 155, 470);
         addObject(new Button("test5", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, false, 1), 255, 470);
         addObject(new Slider("TestSlider", "rail.png", "circle.png", 1, 130), 155, 540);
+        
+        //always have ui elements above the simulation
+        setPaintOrder(Interface.class);
+        
     }
     
      
