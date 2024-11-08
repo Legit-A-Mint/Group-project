@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * me
- * Version 1.0.0
+ * Version 1.0.1
  */
 public class MyWorld extends World
 {   
@@ -34,13 +34,11 @@ public class MyWorld extends World
         addObject(sw, this.getWidth()/2, this.getHeight()/2); 
         addObject(player, this.getWidth()/2, this.getHeight()/2);
         
-        
-        
-        addObject(new Button("test"), 600, 500);
-        addObject(new Button("test2", 100, 50, new Color[] {Color.BLACK, Color.RED, Color.BLUE}, true), 800, 500);
-        addObject(new Button("test3", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 0.98), 55, 470);
-        addObject(new Button("test4", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 0.98), 155, 470);
-        addObject(new Button("test5", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, false, 0.98), 255, 470);
+        //addObject(new Button("test"), 600, 500);
+        //addObject(new Button("test2", 100, 50, new Color[] {Color.BLACK, Color.RED, Color.BLUE}, true), 800, 500);
+        addObject(new Button("test3", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 1), 55, 470);
+        addObject(new Button("test4", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, true, 1), 155, 470);
+        addObject(new Button("test5", new String[] {"pb_1.png", "pb_2.png", "pb_3.png"}, false, 1), 255, 470);
         addObject(new Slider("TestSlider", "rail.png", "circle.png", 1, 130), 155, 540);
     }
     
@@ -65,8 +63,6 @@ public class MyWorld extends World
                     for(int i = 0; i < 2; i++){
                         addObject(new Bass(), -100, -100);
                     }
-                    
-                    addObject(new Whale(), -100, -100);
                 }
                 break;
                 

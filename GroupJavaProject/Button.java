@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Button here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @lumilk
+ * @version 1.0.0
  */
 public class Button extends Interface
 {
@@ -66,7 +66,7 @@ public class Button extends Interface
     
     public boolean checkClicked(){
         if(Greenfoot.mouseClicked(this)){
-            System.out.println("Clicked Button");
+            System.out.println("Clicked button " + name);
             return true;
         }
         else{ 
