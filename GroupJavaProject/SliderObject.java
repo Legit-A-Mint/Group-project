@@ -41,6 +41,14 @@ public class SliderObject extends Interface
     public void setTransparency(double t){
         img.setTransparency((int)(255 * t));
     }
+<<<<<<< HEAD
+=======
+    
+    
+    protected int getMaxOffset(){
+        return maxOffset;
+    }
+>>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     @Override
     protected boolean isUserInteracting() {
         return Greenfoot.mouseMoved(this);

@@ -12,40 +12,54 @@ public class ScrollableWorld extends Effects
 {
     protected GreenfootImage worldImage;
     protected int moveSpeed;
-    protected final double WORLDSIZEFACTOR = 2;
+    protected final double WORLDSIZEFACTOR = 1;
     private int lastDir;
     private int relativeX, relativeY;
 
     private long getIntersectingObjectsTime;
 
+<<<<<<< HEAD
     //test delete ltr
     private int testCounter;
 
+=======
+>>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     public ScrollableWorld(){
         //worldImage = new GreenfootImage((int)
         //(1024 * WORLDSIZEFACTOR), (int)(576 * WORLDSIZEFACTOR));
         //worldImage.setColor(Color.GREEN);
         //worldImage.fill();
         worldImage = new GreenfootImage("bgtemp.png");
+<<<<<<< HEAD
         //worldImage.scale(worldImage.getWidth() * 2, worldImage.getHeight()* 2);
         setImage(worldImage);
         //set Movespeed (varies)
         moveSpeed = 3;
+=======
+        worldImage.scale((int)(worldImage.getWidth() * WORLDSIZEFACTOR), (int)(worldImage.getHeight() * WORLDSIZEFACTOR));
+        setImage(worldImage);
+        //set Movespeed (varies)
+        moveSpeed = 6;
+>>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     }
 
     public void act()
     {
+<<<<<<< HEAD
         testCounter++; 
 
         moveWorld("MANUAL");
 
         handleCollision();
+=======
+        moveWorld("DEBUG");
+>>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     }
 
     //will have direction parameters
     public void moveWorld(String direction){
         //manual movement mode, for debugging
-        if(direction.toUpperCase().equals("MANUAL")){
+        if(direction.toUpperCase().equals("DEBUG")){
             if(Greenfoot.isKeyDown("w")){
                 this.setLocation(this.getX(), this.getY() + moveSpeed);  
                 lastDir = 1;
@@ -86,6 +100,11 @@ public class ScrollableWorld extends Effects
         }
     }
 
+<<<<<<< HEAD
+=======
+    
+    /*
+>>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     public void handleCollision(){
         //handle barriers for x direction
         //if location is too far from origin, move back
@@ -101,7 +120,11 @@ public class ScrollableWorld extends Effects
         if(this.getY() < - (getWorld().getHeight()/2)){
             this.setLocation(this.getX(), this.getY() + moveSpeed);  
         }
+<<<<<<< HEAD
     }
+=======
+    }*/
+>>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 
     /**
     public void repel(){
@@ -136,7 +159,6 @@ public class ScrollableWorld extends Effects
             }
         }
 
-        //
         for(Actor a : nonPlayerHitboxes){
             GreenfootImage imgSizeObject = a.getImage();
             GreenfootImage imgSizeOfPlayer = nonPlayerHitboxes.get(0).getImage();
@@ -145,23 +167,22 @@ public class ScrollableWorld extends Effects
 
             if(p.getX() - imgSizeOfPlayer.getWidth()/2 < a.getX() + imgSizeObject.getWidth()/2){
                 System.out.println("left");
-                System.out.println(p.getX());
-                System.out.println(a.getX());
-                this.setLocation(this.getX() + moveSpeed, this.getY());  
-            }
 
-            if(p.getX() + imgSizeOfPlayer.getWidth()/2 < a.getX() - imgSizeObject.getWidth()/2){
-                //System.out.println("right");
                 this.setLocation(this.getX() - moveSpeed, this.getY());  
             }
 
+            if(p.getX() + imgSizeOfPlayer.getWidth()/2 < a.getX() - imgSizeObject.getWidth()/2){
+                System.out.println("right");
+                this.setLocation(this.getX() + moveSpeed, this.getY());  
+            }
+
             if(p.getY() - imgSizeOfPlayer.getWidth()/2 > a.getY() + imgSizeObject.getWidth()/2){
-                //System.out.println("up");
+                System.out.println("up");
                 this.setLocation(this.getX(), this.getY() + moveSpeed);
             }
 
             if(p.getY() + imgSizeOfPlayer.getWidth()/2 < a.getY() - imgSizeObject.getWidth()/2){
-                //System.out.println("down");
+                System.out.println("down");
                 this.setLocation(this.getX(), this.getY() - moveSpeed);  
             }
 

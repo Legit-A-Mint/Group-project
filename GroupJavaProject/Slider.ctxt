@@ -8,5 +8,12 @@ comment2.target=void\ act()
 comment3.params=t
 comment3.target=void\ setTransparency(double)
 comment4.params=
+<<<<<<< HEAD
 comment4.target=boolean\ isUserInteracting()
 numComments=5
+=======
+comment4.target=double\ getPercent()
+comment5.params=
+comment5.target=boolean\ isUserInteracting()
+numComments=6
+>>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
