@@ -27,7 +27,7 @@ public class MyWorld extends World
         player = new Player();
         sw = new ScrollableWorld();
         
-        waveCount = -1;
+        waveCount = 0;
         actCount = 0;
         spawnOnce = true;
         
@@ -55,10 +55,10 @@ public class MyWorld extends World
                 
         
         //temp islands
-        addObject(new Island(300, -300), 0, 0);
-        addObject(new Island(300, 300), 0, 0);
-        addObject(new Island(-300, 300), 0, 0);
-        addObject(new Island(-300, -300), 0, 0);
+        addObject(new Hitbox(200, 200, 250, -250), 0, 0);
+        addObject(new Hitbox(200, 200, -250, -250), 0, 0);
+        addObject(new Hitbox(200, 200, 250, 250), 0, 0);
+        addObject(new Hitbox(200, 200, -250, 250), 0, 0);
         
         //always have ui elements above the simulation
         setPaintOrder(Interface.class, Hitbox.class);
@@ -87,6 +87,7 @@ public class MyWorld extends World
                 
                 if(actCount == 300){
                     spawnOnce = true;
+                    waveCount++;
                     actCount = 0;
                 }
                 

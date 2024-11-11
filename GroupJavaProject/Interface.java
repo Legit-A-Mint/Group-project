@@ -17,8 +17,8 @@ public abstract class Interface extends SuperSmoothMover{
             resetTransparency();
         } 
         else{
-            if(lastInteractionTime > MAX_IDLE_TIME){  // check shared idle time for all instances
-                fadeTransparency();
+            if(lastInteractionTime > MAX_IDLE_TIME){  // check shared idle time for all instances    
+                fadeTransparency();                  
             } 
             else{
                 resetTransparency();

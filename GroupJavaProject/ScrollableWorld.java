@@ -37,9 +37,6 @@ public class ScrollableWorld extends Effects
     {
         testCounter++; 
 
-        moveWorld("MANUAL");
-
-        handleCollision();
         moveWorld("DEBUG");
 
     }
@@ -90,24 +87,6 @@ public class ScrollableWorld extends Effects
 
 
     
-    
-    public void handleCollision(){
-        //handle barriers for x direction
-        //if location is too far from origin, move back
-        if(this.getX() > worldImage.getWidth() - getWorld().getWidth()/2){
-            this.setLocation(this.getX() - moveSpeed, this.getY());  
-        }
-        if(this.getX() < - (getWorld().getWidth()/2)){
-            this.setLocation(this.getX() + moveSpeed, this.getY());  
-        }
-        if(this.getY() > worldImage.getHeight() - getWorld().getHeight()/2){
-            this.setLocation(this.getX(), this.getY() - moveSpeed);
-        }
-        if(this.getY() < - (getWorld().getHeight()/2)){
-            this.setLocation(this.getX(), this.getY() + moveSpeed);  
-        }
-
-    }
 
 
     /**

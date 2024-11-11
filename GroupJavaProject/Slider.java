@@ -30,11 +30,9 @@ public class Slider extends Interface
         sliderBackground.scale((int)(sliderBackground.getWidth() * scale), 
             (int)(sliderBackground.getHeight() * scale));
         setImage(sliderBackground);
-
     }
 
-    public void act()
-    {
+    public void act(){
         super.act();
         if(!createdSlider){
             //create slider with max offset
@@ -42,6 +40,7 @@ public class Slider extends Interface
             getWorld().addObject(slider, this.getX(), this.getY());
             createdSlider = true;
         }
+        //System.out.println(getPercent());
     }
 
     public void setTransparency(double t){
