@@ -11,20 +11,21 @@ public class SliderObject extends Interface
     private GreenfootImage img;
     private int maxOffset;
     private int refX, refY; //refers to the reference point of Slider
- 
+
     public SliderObject(int max, int refX, String image, double scale){
         img = new GreenfootImage(image);
         setImage(img);
         img.scale((int)(img.getWidth() * scale), 
-        (int)(img.getHeight() * scale));
+            (int)(img.getHeight() * scale));
         maxOffset = max;
         this.refX = refX;
     }
+
     public void act(){
         super.act();
         if (Greenfoot.mouseDragged(this)){
             MouseInfo m = Greenfoot.getMouseInfo();
-            
+
             //Set a boundary for the slider, x position cannot exceed the maxOffset
             if(this.getX() <= refX + maxOffset && this.getX() >= refX - maxOffset){
                 setLocation(m.getX(), this.getY());   
@@ -38,17 +39,15 @@ public class SliderObject extends Interface
             }
         }
     }
+
     public void setTransparency(double t){
         img.setTransparency((int)(255 * t));
     }
-<<<<<<< HEAD
-=======
-    
-    
+
     protected int getMaxOffset(){
         return maxOffset;
     }
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
+
     @Override
     protected boolean isUserInteracting() {
         return Greenfoot.mouseMoved(this);

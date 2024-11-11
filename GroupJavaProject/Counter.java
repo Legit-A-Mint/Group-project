@@ -1,26 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
-<<<<<<< HEAD
  * Write a description of class Counter here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Counter extends Interface
-{
-    /**
-     * Act - do whatever the Counter wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        super.act();
-    }
-=======
- * @lumilk
- * @Version 1.0.0
- */
+
 public class Counter extends Interface
 {
     private GreenfootImage imgBase;
@@ -50,6 +36,7 @@ public class Counter extends Interface
         this.count = count;
         updateImage();
     }
+
     public void setCount(){
         this.count++;
         updateImage();
@@ -63,12 +50,11 @@ public class Counter extends Interface
         imgBase.setFont(new Font("Monotype Sorts", true, false, 24));
         imgBase.setColor(Color.WHITE);
         imgBase.drawString(count + "", myX, myY);
-        
+
         //reset image
         setImage(imgBase);
     }
 
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     @Override
     protected boolean isUserInteracting() {
         return Greenfoot.mouseClicked(this);

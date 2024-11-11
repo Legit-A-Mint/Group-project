@@ -18,15 +18,9 @@ public class Slider extends Interface
     private String sliderImage;
     private double scale;
     private int offset;
-<<<<<<< HEAD
-    
-    private boolean createdSlider;
-    
-=======
 
     private boolean createdSlider;
 
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     public Slider(String name, String image, String sliderImage, double scale, int offset){
         this.name = name;
         this.sliderImage = sliderImage;
@@ -34,15 +28,11 @@ public class Slider extends Interface
         this.offset = offset;
         sliderBackground = new GreenfootImage(image);
         sliderBackground.scale((int)(sliderBackground.getWidth() * scale), 
-        (int)(sliderBackground.getHeight() * scale));
+            (int)(sliderBackground.getHeight() * scale));
         setImage(sliderBackground);
-<<<<<<< HEAD
-        
-    }
-=======
+
     }
 
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     public void act()
     {
         super.act();
@@ -52,14 +42,14 @@ public class Slider extends Interface
             getWorld().addObject(slider, this.getX(), this.getY());
             createdSlider = true;
         }
-<<<<<<< HEAD
     }
+
     public void setTransparency(double t){
         sliderBackground.setTransparency((int)(255 * t));
     }
+
     @Override
     protected boolean isUserInteracting() {
-=======
         getPercent();
     }
 
@@ -88,7 +78,6 @@ public class Slider extends Interface
 
     @Override
     protected boolean isUserInteracting(){
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
         return Greenfoot.mouseMoved(this);
     }
 }
