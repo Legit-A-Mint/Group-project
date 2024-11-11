@@ -18,11 +18,7 @@ public class Island extends SuperSmoothMover
 
         img = new GreenfootImage(200, 200);     
         img.setColor(Color.GREEN);
-<<<<<<< HEAD
         img.fill();
-=======
-        //img.fill();
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
         setImage(img);
         createdHitBox = false;
     }

@@ -3,233 +3,123 @@ dependency1.from=OpeningWindow
 dependency1.to=StartScreen
 dependency1.type=UsesDependency
 dependency10.from=MyWorld
-<<<<<<< HEAD
-<<<<<<< HEAD
-dependency10.to=Enemy
-dependency10.type=UsesDependency
-dependency11.from=ScrollableWorld
-dependency11.to=Hitbox
-dependency11.type=UsesDependency
-dependency12.from=ScrollableWorld
-dependency12.to=Player
-dependency12.type=UsesDependency
-dependency13.from=Enemy
-dependency13.to=Player
-dependency13.type=UsesDependency
-dependency14.from=Enemy
-dependency14.to=ScrollableWorld
-dependency14.type=UsesDependency
-dependency15.from=Shark
-dependency15.to=Player
-dependency15.type=UsesDependency
-dependency16.from=Kracken
-dependency16.to=Player
-dependency16.type=UsesDependency
-dependency17.from=Piranha
-dependency17.to=Player
-dependency17.type=UsesDependency
-dependency18.from=Pufferfish
-dependency18.to=Player
-dependency18.type=UsesDependency
-dependency19.from=Bass
-=======
-dependency10.to=Bandage
-=======
-dependency10.to=Island
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+dependency10.to=Button
 dependency10.type=UsesDependency
 dependency11.from=MyWorld
-dependency11.to=Bandage
+dependency11.to=Hitbox
 dependency11.type=UsesDependency
 dependency12.from=MyWorld
-dependency12.to=FishingNet
+dependency12.to=Island
 dependency12.type=UsesDependency
 dependency13.from=MyWorld
-dependency13.to=Harpoon
+dependency13.to=Bandage
 dependency13.type=UsesDependency
 dependency14.from=MyWorld
-dependency14.to=Interface
+dependency14.to=FishingNet
 dependency14.type=UsesDependency
-dependency15.from=ScrollableWorld
-dependency15.to=Hitbox
+dependency15.from=MyWorld
+dependency15.to=Harpoon
 dependency15.type=UsesDependency
-dependency16.from=ScrollableWorld
-dependency16.to=Player
+dependency16.from=MyWorld
+dependency16.to=Interface
 dependency16.type=UsesDependency
-dependency17.from=Enemy
-dependency17.to=Player
+dependency17.from=ScrollableWorld
+dependency17.to=Hitbox
 dependency17.type=UsesDependency
-dependency18.from=Enemy
-dependency18.to=ScrollableWorld
+dependency18.from=ScrollableWorld
+dependency18.to=Player
 dependency18.type=UsesDependency
-<<<<<<< HEAD
-dependency19.from=Kracken
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
-=======
-dependency19.from=Shark
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+dependency19.from=Enemy
 dependency19.to=Player
 dependency19.type=UsesDependency
-dependency2.from=MyWorld
-dependency2.to=Player
+dependency2.from=OpeningWindow
+dependency2.to=Title
 dependency2.type=UsesDependency
-<<<<<<< HEAD
-<<<<<<< HEAD
-dependency20.from=Whale
-dependency20.to=Player
+dependency20.from=Enemy
+dependency20.to=ScrollableWorld
 dependency20.type=UsesDependency
-dependency21.from=Player
-dependency21.to=Enemy
-dependency21.type=UsesDependency
-dependency22.from=Player
-dependency22.to=Backpack
-dependency22.type=UsesDependency
-dependency23.from=Player
-dependency23.to=Hitbox
-dependency23.type=UsesDependency
-dependency24.from=Player
-dependency24.to=MyWorld
-dependency24.type=UsesDependency
-dependency25.from=Player
-dependency25.to=ScrollableWorld
-dependency25.type=UsesDependency
-dependency26.from=Hitbox
-dependency26.to=ScrollableWorld
-dependency26.type=UsesDependency
-dependency27.from=Hitbox
-dependency27.to=MyWorld
-dependency27.type=UsesDependency
-dependency28.from=Island
-dependency28.to=Hitbox
-dependency28.type=UsesDependency
-dependency29.from=Island
-=======
-dependency20.from=Piranha
-=======
-dependency20.from=Kracken
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
-dependency20.to=Player
-dependency20.type=UsesDependency
-dependency21.from=Piranha
+dependency21.from=Shark
 dependency21.to=Player
 dependency21.type=UsesDependency
-dependency22.from=Pufferfish
+dependency22.from=Kracken
 dependency22.to=Player
 dependency22.type=UsesDependency
-dependency23.from=Bass
+dependency23.from=Piranha
 dependency23.to=Player
 dependency23.type=UsesDependency
-dependency24.from=Whale
+dependency24.from=Pufferfish
 dependency24.to=Player
 dependency24.type=UsesDependency
-dependency25.from=Player
-dependency25.to=Enemy
+dependency25.from=Bass
+dependency25.to=Player
 dependency25.type=UsesDependency
-dependency26.from=Player
-dependency26.to=Backpack
+dependency26.from=Whale
+dependency26.to=Player
 dependency26.type=UsesDependency
 dependency27.from=Player
-dependency27.to=Hitbox
+dependency27.to=Enemy
 dependency27.type=UsesDependency
 dependency28.from=Player
-dependency28.to=MyWorld
+dependency28.to=Backpack
 dependency28.type=UsesDependency
-<<<<<<< HEAD
-dependency29.from=Hitbox
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
-=======
 dependency29.from=Player
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
-dependency29.to=ScrollableWorld
+dependency29.to=Hitbox
 dependency29.type=UsesDependency
-dependency3.from=MyWorld
-dependency3.to=Bass
+dependency3.from=OpeningWindow
+dependency3.to=StartButton
 dependency3.type=UsesDependency
-<<<<<<< HEAD
-dependency30.from=Slider
-dependency30.to=SliderObject
+dependency30.from=Player
+dependency30.to=MyWorld
 dependency30.type=UsesDependency
-=======
-dependency30.from=Hitbox
-dependency30.to=ScrollableWorld
-dependency30.type=UsesDependency
-dependency31.from=Hitbox
-dependency31.to=MyWorld
+dependency31.from=Player
+dependency31.to=ScrollableWorld
 dependency31.type=UsesDependency
-dependency32.from=Island
-dependency32.to=Hitbox
+dependency32.from=Hitbox
+dependency32.to=ScrollableWorld
 dependency32.type=UsesDependency
-dependency33.from=Island
-dependency33.to=ScrollableWorld
+dependency33.from=Hitbox
+dependency33.to=MyWorld
 dependency33.type=UsesDependency
-<<<<<<< HEAD
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
-=======
-dependency34.from=Slider
-dependency34.to=SliderObject
+dependency34.from=Island
+dependency34.to=Hitbox
 dependency34.type=UsesDependency
-dependency35.from=StartScreen
-dependency35.to=MyWorld
+dependency35.from=Island
+dependency35.to=ScrollableWorld
 dependency35.type=UsesDependency
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+dependency36.from=Slider
+dependency36.to=SliderObject
+dependency36.type=UsesDependency
+dependency37.from=StartScreen
+dependency37.to=MyWorld
+dependency37.type=UsesDependency
+dependency38.from=StartButton
+dependency38.to=MyWorld
+dependency38.type=UsesDependency
 dependency4.from=MyWorld
-dependency4.to=ScrollableWorld
+dependency4.to=Player
 dependency4.type=UsesDependency
 dependency5.from=MyWorld
-<<<<<<< HEAD
-<<<<<<< HEAD
-dependency5.to=Button
+dependency5.to=Bass
 dependency5.type=UsesDependency
 dependency6.from=MyWorld
-dependency6.to=Slider
+dependency6.to=ScrollableWorld
 dependency6.type=UsesDependency
 dependency7.from=MyWorld
-dependency7.to=Island
+dependency7.to=Whale
 dependency7.type=UsesDependency
 dependency8.from=MyWorld
-dependency8.to=Interface
+dependency8.to=Slider
 dependency8.type=UsesDependency
 dependency9.from=MyWorld
-dependency9.to=Hitbox
+dependency9.to=Counter
 dependency9.type=UsesDependency
-editor.fx.0.height=1024
-editor.fx.0.width=865
-editor.fx.0.x=847
-editor.fx.0.y=0
-height=1024
-package.numDependencies=30
-package.numTargets=30
-=======
-dependency5.to=Slider
-=======
-dependency5.to=Whale
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
-dependency5.type=UsesDependency
-dependency6.from=MyWorld
-dependency6.to=Slider
-dependency6.type=UsesDependency
-dependency7.from=MyWorld
-dependency7.to=Counter
-dependency7.type=UsesDependency
-dependency8.from=MyWorld
-dependency8.to=Button
-dependency8.type=UsesDependency
-dependency9.from=MyWorld
-dependency9.to=Hitbox
-dependency9.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+editor.fx.0.height=1033
+editor.fx.0.width=1721
+editor.fx.0.x=-7
+editor.fx.0.y=-7
 height=729
-<<<<<<< HEAD
-package.numDependencies=33
-package.numTargets=31
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
-=======
-package.numDependencies=35
-package.numTargets=33
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+package.numDependencies=38
+package.numTargets=34
 project.charset=UTF-8
 publish.hasSource=false
 publish.locked=true
@@ -240,14 +130,10 @@ publish.title=
 publish.url=
 readme.height=60
 readme.name=@README
-<<<<<<< HEAD
 readme.width=48
-=======
-readme.width=49
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 readme.x=10
 readme.y=10
-simulation.speed=53
+simulation.speed=45
 target1.height=70
 target1.name=Slider
 target1.showInterface=false
@@ -256,114 +142,70 @@ target1.width=120
 target1.x=0
 target1.y=0
 target10.height=70
-<<<<<<< HEAD
-target10.name=Counter
-=======
 target10.name=ScrollableWorld
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target10.showInterface=false
 target10.type=ClassTarget
 target10.width=120
 target10.x=0
 target10.y=0
 target11.height=70
-<<<<<<< HEAD
-target11.name=FishingNet
-=======
 target11.name=Counter
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target11.showInterface=false
 target11.type=ClassTarget
 target11.width=120
 target11.x=0
 target11.y=0
 target12.height=70
-<<<<<<< HEAD
-target12.name=Bandage
-=======
 target12.name=FishingNet
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target12.showInterface=false
 target12.type=ClassTarget
 target12.width=120
 target12.x=0
 target12.y=0
 target13.height=70
-<<<<<<< HEAD
-target13.name=Button
-=======
 target13.name=Bandage
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target13.showInterface=false
 target13.type=ClassTarget
 target13.width=120
 target13.x=0
 target13.y=0
 target14.height=70
-<<<<<<< HEAD
-target14.name=Harpoon
-=======
 target14.name=Button
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target14.showInterface=false
 target14.type=ClassTarget
 target14.width=120
 target14.x=0
 target14.y=0
 target15.height=70
-<<<<<<< HEAD
-target15.name=Enemy
-target15.showInterface=false
-target15.type=AbstractTarget
-=======
 target15.name=Harpoon
 target15.showInterface=false
 target15.type=ClassTarget
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target15.width=120
 target15.x=0
 target15.y=0
 target16.height=70
-<<<<<<< HEAD
-target16.name=Pufferfish
-target16.showInterface=false
-target16.type=ClassTarget
-=======
 target16.name=Enemy
 target16.showInterface=false
 target16.type=AbstractTarget
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target16.width=120
 target16.x=0
 target16.y=0
 target17.height=70
-<<<<<<< HEAD
-target17.name=SuperFishingRod
-=======
 target17.name=Pufferfish
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target17.showInterface=false
 target17.type=ClassTarget
 target17.width=120
 target17.x=0
 target17.y=0
 target18.height=70
-<<<<<<< HEAD
-target18.name=OpeningWindow
-=======
 target18.name=SuperFishingRod
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target18.showInterface=false
 target18.type=ClassTarget
 target18.width=120
 target18.x=0
 target18.y=0
 target19.height=70
-<<<<<<< HEAD
-target19.name=MyWorld
-=======
 target19.name=OpeningWindow
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target19.showInterface=false
 target19.type=ClassTarget
 target19.width=120
@@ -377,126 +219,72 @@ target2.width=130
 target2.x=0
 target2.y=0
 target20.height=70
-<<<<<<< HEAD
-target20.name=Bass
-=======
 target20.name=MyWorld
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target20.showInterface=false
 target20.type=ClassTarget
 target20.width=120
 target20.x=0
 target20.y=0
 target21.height=70
-<<<<<<< HEAD
-target21.name=Hitbox
-=======
 target21.name=Bass
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target21.showInterface=false
 target21.type=ClassTarget
 target21.width=120
 target21.x=0
 target21.y=0
 target22.height=70
-<<<<<<< HEAD
-target22.name=Player
-=======
 target22.name=Hitbox
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target22.showInterface=false
 target22.type=ClassTarget
 target22.width=120
 target22.x=0
 target22.y=0
 target23.height=70
-<<<<<<< HEAD
-target23.name=Island
-=======
 target23.name=Player
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target23.showInterface=false
 target23.type=ClassTarget
 target23.width=120
 target23.x=0
 target23.y=0
 target24.height=70
-<<<<<<< HEAD
-target24.name=StatusBar
-=======
 target24.name=ShopUI
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target24.showInterface=false
 target24.type=ClassTarget
 target24.width=120
 target24.x=0
 target24.y=0
 target25.height=70
-<<<<<<< HEAD
-target25.name=Backpack
-=======
-target25.name=Island
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
+target25.name=Title
 target25.showInterface=false
 target25.type=ClassTarget
 target25.width=120
 target25.x=0
 target25.y=0
 target26.height=70
-<<<<<<< HEAD
-target26.name=Shop
-=======
-target26.name=StatusBar
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
+target26.name=Island
 target26.showInterface=false
 target26.type=ClassTarget
 target26.width=120
 target26.x=0
 target26.y=0
 target27.height=70
-<<<<<<< HEAD
-<<<<<<< HEAD
-target27.name=Whale
-=======
-target27.name=Backpack
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
-=======
-target27.name=StartButton
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+target27.name=StatusBar
 target27.showInterface=false
 target27.type=ClassTarget
 target27.width=120
 target27.x=0
 target27.y=0
 target28.height=70
-<<<<<<< HEAD
-<<<<<<< HEAD
-target28.name=FishingRod
-=======
-target28.name=Whale
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
-=======
-target28.name=StartScreen
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+target28.name=StartButton
 target28.showInterface=false
 target28.type=ClassTarget
 target28.width=120
 target28.x=0
 target28.y=0
 target29.height=70
-<<<<<<< HEAD
-<<<<<<< HEAD
-target29.name=Interface
-target29.showInterface=false
-target29.type=AbstractTarget
-=======
-target29.name=FishingRod
-=======
-target29.name=Backpack
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+target29.name=StartScreen
 target29.showInterface=false
 target29.type=ClassTarget
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target29.width=120
 target29.x=0
 target29.y=0
@@ -508,49 +296,40 @@ target3.width=120
 target3.x=0
 target3.y=0
 target30.height=70
-<<<<<<< HEAD
-<<<<<<< HEAD
-target30.name=Spear
-target30.showInterface=false
-target30.type=ClassTarget
-target30.width=120
-target30.x=0
-target30.y=0
-=======
-target30.name=Interface
-=======
-target30.name=Whale
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+target30.name=Backpack
 target30.showInterface=false
 target30.type=ClassTarget
 target30.width=120
 target30.x=0
 target30.y=0
 target31.height=70
-target31.name=FishingRod
+target31.name=Whale
 target31.showInterface=false
 target31.type=ClassTarget
 target31.width=120
 target31.x=0
 target31.y=0
-<<<<<<< HEAD
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
-=======
 target32.height=70
-target32.name=Interface
+target32.name=FishingRod
 target32.showInterface=false
-target32.type=AbstractTarget
+target32.type=ClassTarget
 target32.width=120
 target32.x=0
 target32.y=0
 target33.height=70
-target33.name=Spear
+target33.name=Interface
 target33.showInterface=false
-target33.type=ClassTarget
+target33.type=AbstractTarget
 target33.width=120
 target33.x=0
 target33.y=0
->>>>>>> b58e1afffb3379428131d94a4482314c079ed844
+target34.height=70
+target34.name=Spear
+target34.showInterface=false
+target34.type=ClassTarget
+target34.width=120
+target34.x=0
+target34.y=0
 target4.height=70
 target4.name=Shark
 target4.showInterface=false
@@ -580,36 +359,21 @@ target7.width=120
 target7.x=0
 target7.y=0
 target8.height=70
-<<<<<<< HEAD
-target8.name=SliderObject
-=======
 target8.name=Item
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target8.showInterface=false
 target8.type=ClassTarget
 target8.width=120
 target8.x=0
 target8.y=0
 target9.height=70
-<<<<<<< HEAD
-target9.name=ScrollableWorld
-=======
 target9.name=SliderObject
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
 target9.x=0
 target9.y=0
 version=3.1.0
-<<<<<<< HEAD
-width=865
-world.lastInstantiated=MyWorld
-xPosition=0
-yPosition=0
-=======
 width=1324
 world.lastInstantiated=MyWorld
 xPosition=54
 yPosition=163
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364

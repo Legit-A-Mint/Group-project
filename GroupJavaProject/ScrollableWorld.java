@@ -18,42 +18,30 @@ public class ScrollableWorld extends Effects
 
     private long getIntersectingObjectsTime;
 
-<<<<<<< HEAD
     //test delete ltr
     private int testCounter;
 
-=======
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     public ScrollableWorld(){
         //worldImage = new GreenfootImage((int)
         //(1024 * WORLDSIZEFACTOR), (int)(576 * WORLDSIZEFACTOR));
         //worldImage.setColor(Color.GREEN);
         //worldImage.fill();
         worldImage = new GreenfootImage("bgtemp.png");
-<<<<<<< HEAD
-        //worldImage.scale(worldImage.getWidth() * 2, worldImage.getHeight()* 2);
-        setImage(worldImage);
-        //set Movespeed (varies)
-        moveSpeed = 3;
-=======
         worldImage.scale((int)(worldImage.getWidth() * WORLDSIZEFACTOR), (int)(worldImage.getHeight() * WORLDSIZEFACTOR));
         setImage(worldImage);
         //set Movespeed (varies)
         moveSpeed = 6;
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
     }
 
     public void act()
     {
-<<<<<<< HEAD
         testCounter++; 
 
         moveWorld("MANUAL");
 
         handleCollision();
-=======
         moveWorld("DEBUG");
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
+
     }
 
     //will have direction parameters
@@ -100,11 +88,9 @@ public class ScrollableWorld extends Effects
         }
     }
 
-<<<<<<< HEAD
-=======
+
     
-    /*
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
+    
     public void handleCollision(){
         //handle barriers for x direction
         //if location is too far from origin, move back
@@ -120,11 +106,9 @@ public class ScrollableWorld extends Effects
         if(this.getY() < - (getWorld().getHeight()/2)){
             this.setLocation(this.getX(), this.getY() + moveSpeed);  
         }
-<<<<<<< HEAD
+
     }
-=======
-    }*/
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
+
 
     /**
     public void repel(){

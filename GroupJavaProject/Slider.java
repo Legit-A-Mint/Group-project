@@ -48,15 +48,6 @@ public class Slider extends Interface
         sliderBackground.setTransparency((int)(255 * t));
     }
 
-    @Override
-    protected boolean isUserInteracting() {
-        getPercent();
-    }
-
-    public void setTransparency(double t){
-        sliderBackground.setTransparency((int)(255 * t));
-    }
-
     public double getPercent(){
         //get maximum and minimpoint based on x coordinants
         double pointAX = this.getX() - slider.getMaxOffset();

@@ -10,12 +10,6 @@ comment3.target=Hitbox(int,\ int,\ int,\ int,\ greenfoot.Actor,\ boolean)
 comment4.params=
 comment4.target=void\ act()
 comment5.params=
-<<<<<<< HEAD
-comment5.target=boolean\ checkCollision()
-comment6.params=
-comment6.target=boolean\ returnPlayer()
-numComments=7
-=======
 comment5.target=void\ moveWithActor()
 comment6.params=
 comment6.target=void\ moveWithRelativeWorld()
@@ -24,4 +18,3 @@ comment7.target=boolean\ checkCollision()
 comment8.params=
 comment8.target=boolean\ returnPlayer()
 numComments=9
->>>>>>> 6789bd63d2134296070e345ed5c18ecf009cd364
