@@ -15,7 +15,10 @@ public class OpeningWindow extends World
      */
     public OpeningWindow()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        //create an unbounded world
+        super(1024, 576, 1, false); 
+        addObject(new StartScreen(), 512, 288);
+        addObject(new Title(), 512, 180);
+        addObject(new StartButton(), 512, 300);
     }
 }
