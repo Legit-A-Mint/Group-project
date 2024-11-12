@@ -31,7 +31,7 @@ public class ScrollableWorld extends Effects
         worldImage = new GreenfootImage("bgtemp.png");
         worldImage.scale((int)(worldImage.getWidth() * WORLDSIZEFACTOR), (int)(worldImage.getHeight() * WORLDSIZEFACTOR));
         setImage(worldImage);
-        tolerance = 7;
+        tolerance = 6;
         //set Movespeed (varies)
         moveSpeedX = 6;
         moveSpeedY = 6;
@@ -41,36 +41,12 @@ public class ScrollableWorld extends Effects
     public void act()
     {
         testCounter++; 
-        stopJittering = false;
-        
         if(!stopJittering){
-            moveWorld("MANUAL");
-            moveWorld("DEBUG");
+            
         }
     }
 
-    //will have direction parameters
     public void moveWorld(String direction){
-        //manual movement mode, for debugging
-        if(direction.toUpperCase().equals("DEBUG")){
-            if(Greenfoot.isKeyDown("w")){
-                this.setLocation(this.getX(), this.getY() + moveSpeedY);  
-                lastDir = 1;
-            }
-            if(Greenfoot.isKeyDown("a")){
-                this.setLocation(this.getX() + moveSpeedX, this.getY());
-                lastDir = 2;
-            }
-            if(Greenfoot.isKeyDown("s")){
-                this.setLocation(this.getX(), this.getY() - moveSpeedY);
-                lastDir = 3;
-            }
-            if(Greenfoot.isKeyDown("d")){
-                this.setLocation(this.getX() - moveSpeedX, this.getY());
-                lastDir = 4;
-            } 
-        }
-
         if(direction.toUpperCase().equals("UP")){
             this.setLocation(this.getX(), this.getY() + moveSpeedY);  
             lastDir = 1;
@@ -215,5 +191,4 @@ public class ScrollableWorld extends Effects
             }
         }
     }
-
 }

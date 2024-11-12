@@ -5,7 +5,6 @@ comment1.params=h\ w\ xOffset\ yOffset
 comment1.target=Hitbox(int,\ int,\ int,\ int)
 comment2.params=h\ w\ xOffset\ yOffset\ a
 comment2.target=Hitbox(int,\ int,\ int,\ int,\ greenfoot.Actor)
-comment2.text=\r\n\ \ \ \ public\ Hitbox(int\ h,\ int\ w,\ int\ xOffset,\ int\ yOffset,\ Actor\ a){\r\n\ \ \ \ \ \ \ \ box\ \=\ new\ GreenfootImage(h,\ w);\r\n\ \ \ \ \ \ \ \ box.setColor(Color.RED);\r\n\ \ \ \ \ \ \ \ box.setTransparency(100);\ //less\ distracting\ when\ turned\ on\r\n\ \ \ \ \ \ \ \ if(visible){\r\n\ \ \ \ \ \ \ \ \ \ \ \ box.fill();\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ setImage(box);\r\n\r\n\ \ \ \ \ \ \ \ this.xOffset\ \=\ xOffset;\r\n\ \ \ \ \ \ \ \ this.yOffset\ \=\ yOffset;\r\n\ \ \ \ \ \ \ \ actor\ \=\ a;\r\n\r\n\ \ \ \ \ \ \ \ isPlayer\ \=\ false;\r\n\ \ \ \ }\r\n
 comment3.params=h\ w\ xOffset\ yOffset\ a\ b
 comment3.target=Hitbox(int,\ int,\ int,\ int,\ greenfoot.Actor,\ java.lang.String)
 comment4.params=
