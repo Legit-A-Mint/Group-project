@@ -17,7 +17,8 @@ public class MyWorld extends World
     private Slider slider;
     private Counter counter;
     
-    public static GreenfootSound ambientSound = new GreenfootSound("auughhh.mp3");
+    // https://pixabay.com/sound-effects/gentle-ocean-waves-fizzing-bubbles-64980/
+    public static GreenfootSound ambientSound = new GreenfootSound("gentle_Ocean.mp3");
     
     public MyWorld(){  
         //create an unbounded world 
@@ -77,6 +78,12 @@ public class MyWorld extends World
     }
     
     public void addedToWorld ()
+    {
+        // Plays the ambient noise in a loop
+        ambientSound.playLoop();
+    }
+    
+    public void started ()
     {
         // Plays the ambient noise in a loop
         ambientSound.playLoop();
