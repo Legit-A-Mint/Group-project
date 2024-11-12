@@ -50,42 +50,43 @@ public class Player extends Effects
     }
 
     public void act(){
-        //create hitbox
-        if(!createdHitbox){
-            h = new Hitbox(playerImage.getWidth() - 15, 
-            playerImage.getHeight() - 60, 0, 0, this);
+        if (MyWorld.isActing())
+        {
+            //create hitbox
+            if(!createdHitbox){
+                h = new Hitbox(playerImage.getWidth() - 15, 
+                    playerImage.getHeight() - 60, 0, 0, this);
 
-            getWorld().addObject(h, this.getX(), this.getY());
-            createdHitbox = true;
+                getWorld().addObject(h, this.getX(), this.getY());
+                createdHitbox = true;
+            }
+
+            checkCollision();
+            repelMe();
+
+            // init backpack here, not sure how
+            if(direction == -1){}
+            if(direction == -1){
+                setImage(reflectedPlayerImage);
+            }
+            else if (direction == 1){
+                setImage(playerImage);
+            }
+
+            if(Greenfoot.isKeyDown("a") && !Greenfoot.isKeyDown("d")){
+                direction = -1;
+            }
+            if(Greenfoot.isKeyDown("d") && !Greenfoot.isKeyDown("a")){
+                direction = 1;
+            }
+
+            actCount++;
+            /*
+            if(actCount % intelligence == 0){
+            action();
+            }*/
+
         }
-
-        checkCollision();
-        repelMe();
-
-        
-        // init backpack here, not sure how
-        if(direction == -1){}
-        if(direction == -1){
-            setImage(reflectedPlayerImage);
-        }
-        else if (direction == 1){
-            setImage(playerImage);
-        }
-
-        if(Greenfoot.isKeyDown("a") && !Greenfoot.isKeyDown("d")){
-            direction = -1;
-        }
-        if(Greenfoot.isKeyDown("d") && !Greenfoot.isKeyDown("a")){
-            direction = 1;
-        }
-
-        actCount++;
-        /*
-        if(actCount % intelligence == 0){
-        action();
-        }*/
-
-    
     }
 
     public void setDirection(int dir){
@@ -113,7 +114,7 @@ public class Player extends Effects
     public void action(){
 
     targetClosestEnemy();
-        
+
     if(!melee || !attackReady || distanceToActor < Backpack.getKiteRange()){
     move(-speed);
     }else{

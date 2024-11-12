@@ -27,6 +27,9 @@ public abstract class Enemy extends Effects
     private int repelPriority;
     private static int repelPrioTracker = 0;
 
+    private int myActNumber;
+    private static int nextActNumber = -1;
+
     protected abstract boolean checkForCollision();
 
     public Enemy(){
@@ -47,27 +50,33 @@ public abstract class Enemy extends Effects
         repelPriority = 0 + repelPrioTracker;
         repelPrioTracker++;
 
+        myActNumber = getNextActNumber();
         //enableStaticRotation();
     }
 
     public void act()
     {   
-        dir = 1;
-        speedX = speed;
-        speedY = speed;
+        if (MyWorld.isActing())
+        {
+            dir = 1;
+            speedX = speed;
+            speedY = speed;
+            
+            lookForTarget();
+            
+            if(this.hp <= 0 ){
+                removeMe = true;
+            }
 
-        repelEnemies();
+            if(removeMe){
+                getWorld().removeObject(this);
+            }
+            if (MyWorld.getActNumber() == myActNumber)
+            {
+                repelEnemies();
 
-        lookForTarget();
-
-        moveWithWorld();
-
-        if(this.hp <= 0 ){
-            removeMe = true;
-        }
-
-        if(removeMe){
-            getWorld().removeObject(this);
+                moveWithWorld();
+            }
         }
     }
 
@@ -198,5 +207,15 @@ public abstract class Enemy extends Effects
 
     public int getRepelPriority(){
         return repelPriority;
+    }
+
+    private static int getNextActNumber () {
+        if (nextActNumber == -1){
+            nextActNumber = 1;
+        }
+        if (nextActNumber > 3){
+            nextActNumber = 1; // goes back to 1 - Zero (0) is reserved for UI refresh
+        }
+        return nextActNumber++;
     }
 }
