@@ -170,6 +170,7 @@ public class ScrollableWorld extends Effects
             
             //
             
+            /**
             if(xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance
                 && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
                     && a.getType() == "Border"){
@@ -213,6 +214,7 @@ public class ScrollableWorld extends Effects
                 
                 this.setLocation(this.getX() + moveSpeedX, this.getY()); 
             }
+            */
         }
     }
 

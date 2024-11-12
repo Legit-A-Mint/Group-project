@@ -40,8 +40,8 @@ public class MyWorld extends World
         //addObject(new Button("test"), 600, 500);
         //addObject(new Button("test2", 100, 50, new Color[] {Color.BLACK, Color.RED, Color.BLUE}, true), 800, 500);
         addObject(new Button("test3", new String[] {"db_1.png", "db_2.png", "db_3.png"}, true, 1), 55, 470);
-        addObject(new Button("test4", new String[] {"db_1.png", "db_2.png", "db_3.png"}, true, 1), 155, 470);
-        addObject(new Button("test5", new String[] {"db_1.png", "db_2.png", "db_3.png"}, true, 1), 255, 470);
+        //addObject(new Button("test4", new String[] {"db_1.png", "db_2.png", "db_3.png"}, true, 1), 155, 470);
+        //addObject(new Button("test5", new String[] {"db_1.png", "db_2.png", "db_3.png"}, true, 1), 255, 470);
         
         //slider and counter
         slider = new Slider("TestSlider", "rail.png", "circle.png", 1, 130);
@@ -91,17 +91,18 @@ public class MyWorld extends World
     public void act(){
         actCount++;
         
+        if(actCount == 300){
+            spawnOnce = true;
+            waveCount++;
+            actCount = 0;
+        }
+        
         //waveTracking();
         switch(waveCount) {
             case(0):
             
                 // Manual wave simulator
                 
-                if(actCount == 300){
-                    spawnOnce = true;
-                    waveCount++;
-                    actCount = 0;
-                }
                 
                 
                 if(spawnOnce){
@@ -109,6 +110,8 @@ public class MyWorld extends World
                     for(int i = 0; i < 2; i++){
                         addObject(new Bass(), -100, -100);
                     }
+                    
+                    addObject(new Whale(), -100, -100);
                 }
                 break;
                 
