@@ -12,6 +12,8 @@ public class Island extends SuperSmoothMover
     private int relativeX, relativeY;
     private boolean createdHitBox;
     private Hitbox h;
+    private boolean isBorder;
+    
     public Island(int relX, int relY){
         relativeX = relX;
         relativeY = relY;
@@ -22,9 +24,28 @@ public class Island extends SuperSmoothMover
         setImage(img);
         createdHitBox = false;
     }
+    
+    public Island(int relX, int relY, int x){
+        relativeX = relX;
+        relativeY = relY;
+
+        img = new GreenfootImage(200, 200);     
+        img.setColor(Color.GREEN);
+        img.fill();
+        setImage(img);
+        createdHitBox = false;
+        
+        isBorder = true;
+    }
 
     public void act()
     {
+        if(!createdHitBox && isBorder){
+            h = new Hitbox(img.getWidth(), img.getHeight()-40, 0, 20, this, "Border");
+            getWorld().addObject(h, this.getX(), this.getY());
+            createdHitBox = true;
+        }
+        
         if(!createdHitBox){
             h = new Hitbox(img.getWidth(), img.getHeight()-40, 0, 20, this);
             getWorld().addObject(h, this.getX(), this.getY());

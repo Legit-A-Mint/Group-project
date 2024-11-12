@@ -50,17 +50,23 @@ public class MyWorld extends World
         //addObject(counter, 360, 540);
         
         //border hitboxes
-        //addObject(new Hitbox(getObjects(ScrollableWorld.class).get(0).getImage().getWidth(), 100, 0, -((getObjects(ScrollableWorld.class).get(0).getImage().getHeight())/2) - 50), 0, 0);
-        //addObject(new Hitbox(getObjects(ScrollableWorld.class).get(0).getImage().getWidth(), 100, 0, ((getObjects(ScrollableWorld.class).get(0).getImage().getHeight())/2) + 50), 0, 0);
-        //addObject(new Hitbox(100, getObjects(ScrollableWorld.class).get(0).getImage().getHeight(), (-(getObjects(ScrollableWorld.class).get(0).getImage().getWidth())/2) - 50, 0), 0, 0);
-        //addObject(new Hitbox(100, getObjects(ScrollableWorld.class).get(0).getImage().getHeight(), ((getObjects(ScrollableWorld.class).get(0).getImage().getWidth())/2) + 50, 0), 0, 0);
+        addObject(new Hitbox(getObjects(ScrollableWorld.class).get(0).getImage().getWidth(), 100, 0, -((getObjects(ScrollableWorld.class).get(0).getImage().getHeight())/2) - 50), 0, 0);
+        addObject(new Hitbox(getObjects(ScrollableWorld.class).get(0).getImage().getWidth(), 100, 0, ((getObjects(ScrollableWorld.class).get(0).getImage().getHeight())/2) + 50), 0, 0);
+        addObject(new Hitbox(100, getObjects(ScrollableWorld.class).get(0).getImage().getHeight(), (-(getObjects(ScrollableWorld.class).get(0).getImage().getWidth())/2) - 50, 0), 0, 0);
+        addObject(new Hitbox(100, getObjects(ScrollableWorld.class).get(0).getImage().getHeight(), ((getObjects(ScrollableWorld.class).get(0).getImage().getWidth())/2) + 50, 0), 0, 0);
                 
         
         //temp islands
+        addObject(new Island(300, -300), 0, 0);
+        addObject(new Island(300, 300), 0, 0);
+        addObject(new Island(-300, 300), 0, 0);
+        addObject(new Island(-300, -300), 0, 0);
+        /**
         addObject(new Hitbox(200, 200, 250, -250), 0, 0);
         addObject(new Hitbox(200, 200, -250, -250), 0, 0);
         addObject(new Hitbox(200, 200, 250, 250), 0, 0);
         addObject(new Hitbox(200, 200, -250, 250), 0, 0);
+        */
         
         //always have ui elements above the simulation
         setPaintOrder(Interface.class, Hitbox.class);

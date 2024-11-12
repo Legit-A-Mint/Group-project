@@ -9,5 +9,4 @@ comment3.params=direction
 comment3.target=void\ moveWorld(java.lang.String)
 comment4.params=
 comment4.target=void\ repel()
-comment4.text=\r\n\ \ \ \ public\ void\ repel(){\r\n\ \ \ \ if(lastDir\ \=\=\ 1){\r\n\ \ \ \ this.setLocation(this.getX(),\ this.getY()\ -\ moveSpeed);\r\n\ \ \ \ }\r\n\ \ \ \ else\ if(lastDir\ \=\=\ 2){\r\n\ \ \ \ this.setLocation(this.getX()\ -\ moveSpeed,\ this.getY());\r\n\ \ \ \ }\r\n\ \ \ \ else\ if(lastDir\ \=\=\ 3){\r\n\ \ \ \ this.setLocation(this.getX(),\ this.getY()\ +\ moveSpeed);\r\n\ \ \ \ }\r\n\ \ \ \ else\ if(lastDir\ \=\=\ 4){\r\n\ \ \ \ this.setLocation(this.getX()\ +\ moveSpeed,\ this.getY());\ \r\n\ \ \ \ }\r\n\ \ \ \ }\r\n
 numComments=5

@@ -66,6 +66,23 @@ public class Hitbox extends SuperSmoothMover
         identifier = a.getClass().getName();
 
     }
+    
+    public Hitbox(int h, int w, int xOffset, int yOffset, Actor a, String b){
+        box = new GreenfootImage(h, w);
+        box.setColor(Color.RED);
+        box.setTransparency(100); //less distracting when turned on
+        if(visible){
+            box.fill();
+        }
+        setImage(box);
+
+        this.xOffset = xOffset;
+        this.yOffset = yOffset;
+        actor = a;
+        
+        identifier = b;
+
+    }
 
     public void act()
     {
