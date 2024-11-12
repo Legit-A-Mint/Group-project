@@ -17,6 +17,8 @@ public class MyWorld extends World
     private Slider slider;
     private Counter counter;
     
+    public static GreenfootSound ambientSound = new GreenfootSound("auughhh.mp3");
+    
     public MyWorld(){  
         //create an unbounded world 
         super(1024, 576, 1, false);
@@ -68,12 +70,16 @@ public class MyWorld extends World
         //drawShopItems();
     }
     
-    public void drawShopItems()
+    public void addedToWorld ()
     {
-        // will make arraylist soon
-        addObject(new Bandage(60,60), getWidth()/2, getHeight()-50);
-        addObject(new FishingNet(60,60), getWidth()/2 - 100, getHeight()-50);
-        addObject(new Harpoon(60,60), getWidth()/2 - 200, getHeight()-50);
+        // Plays the ambient noise in a loop
+        ambientSound.playLoop();
+    }
+    
+    public void stopped ()
+    {
+        // Stops playing the ambient noises when simulation is paused
+        ambientSound.pause();
     }
     
     public void act(){
