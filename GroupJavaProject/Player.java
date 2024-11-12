@@ -52,8 +52,8 @@ public class Player extends Effects
     public void act(){
         //create hitbox
         if(!createdHitbox){
-            h = new Hitbox(playerImage.getWidth() - 30, 
-            playerImage.getHeight() - 60, 0, 0, this, true);
+            h = new Hitbox(playerImage.getWidth() - 15, 
+            playerImage.getHeight() - 60, 0, 0, this);
 
             getWorld().addObject(h, this.getX(), this.getY());
             createdHitbox = true;

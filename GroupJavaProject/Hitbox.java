@@ -14,6 +14,8 @@ public class Hitbox extends SuperSmoothMover
     private static final boolean visible = true;
 
     private boolean isPlayer;
+    
+    private String identifier;
 
     public Hitbox(int h, int w, int xOffset, int yOffset){
         box = new GreenfootImage(h, w);
@@ -29,7 +31,8 @@ public class Hitbox extends SuperSmoothMover
 
         isPlayer = false;
     }
-
+    
+    /**
     public Hitbox(int h, int w, int xOffset, int yOffset, Actor a){
         box = new GreenfootImage(h, w);
         box.setColor(Color.RED);
@@ -45,8 +48,9 @@ public class Hitbox extends SuperSmoothMover
 
         isPlayer = false;
     }
+    */
 
-    public Hitbox(int h, int w, int xOffset, int yOffset, Actor a, boolean player){
+    public Hitbox(int h, int w, int xOffset, int yOffset, Actor a){
         box = new GreenfootImage(h, w);
         box.setColor(Color.RED);
         box.setTransparency(100); //less distracting when turned on
@@ -58,8 +62,9 @@ public class Hitbox extends SuperSmoothMover
         this.xOffset = xOffset;
         this.yOffset = yOffset;
         actor = a;
+        
+        identifier = a.getClass().getName();
 
-        isPlayer = player;
     }
 
     public void act()
@@ -89,7 +94,7 @@ public class Hitbox extends SuperSmoothMover
         return(this.isTouching(Hitbox.class));
     }
 
-    public boolean returnPlayer(){
-        return isPlayer;
+    public String getType(){
+        return identifier;
     }
 }
