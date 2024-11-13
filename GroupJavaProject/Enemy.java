@@ -91,17 +91,24 @@ public abstract class Enemy extends Effects
             player = getWorld().getObjects(Player.class).get(0);
             turnTowards(player.getX(), player.getY());
 
-            if(player.getX() < this.getX() && player.getX() < this.getX()){
+            if(player.getX() < this.getX() && player.getY() < this.getY()){
+                // bottom right
                 speedX = -speed;
+                speedY = -speed;
                 dir = -1;
-            }else{
+            }else if (player.getX() > this.getX() && player.getY() < this.getY()){
+                // bottom left
                 speedX = speed;
-                dir = 1;
-            }
-            if(player.getY() < this.getY()){
                 speedY = -speed;
                 dir = 1;
+            }else if(player.getX() < this.getX() && player.getY() > this.getY()){
+                // top right
+                speedX = -speed;
+                speedY = speed;
+                dir = -1;
             }else{
+                // top left
+                speedX = speed;
                 speedY = speed;
                 dir = 1;
             }
