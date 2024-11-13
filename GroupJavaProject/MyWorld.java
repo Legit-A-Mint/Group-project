@@ -111,7 +111,7 @@ public class MyWorld extends World
                 if(spawnOnce){
                     spawnOnce = false;
                     for(int i = 0; i < 3; i++){
-                        addObject(new Bass(), -100, -100);
+                        //addObject(new Bass(), -100, -100);
                     }
                 }
             
@@ -121,7 +121,7 @@ public class MyWorld extends World
                 if(spawnOnce){
                     spawnOnce = false;
                     for(int i = 0; i < 3; i++){
-                        addObject(new Bass(), -100, -100);
+                        //addObject(new Bass(), -100, -100);
                     }
                 }
             
