@@ -29,7 +29,7 @@ public class MyWorld extends World
         player = new Player();
         sw = new ScrollableWorld();
         
-        waveCount = -1;
+        waveCount = 0;
         actCount = 0;
         spawnOnce = true;
         
