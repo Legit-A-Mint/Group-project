@@ -50,43 +50,32 @@ public class Player extends Effects
     }
 
     public void act(){
-        if (MyWorld.isActing())
-        {
-            //create hitbox
-            if(!createdHitbox){
-                h = new Hitbox(playerImage.getWidth() - 15, 
-                    playerImage.getHeight() - 60, 0, 0, this);
+        //create hitbox
+        if(!createdHitbox){
+            h = new Hitbox(playerImage.getWidth() - 15, 
+            playerImage.getHeight() - 60, 0, 0, this);
 
-                getWorld().addObject(h, this.getX(), this.getY());
-                createdHitbox = true;
-            }
-
-            checkCollision();
-            repelMe();
-
-            // init backpack here, not sure how
-            if(direction == -1){}
-            if(direction == -1){
-                setImage(reflectedPlayerImage);
-            }
-            else if (direction == 1){
-                setImage(playerImage);
-            }
-
-            if(Greenfoot.isKeyDown("a") && !Greenfoot.isKeyDown("d")){
-                direction = -1;
-            }
-            if(Greenfoot.isKeyDown("d") && !Greenfoot.isKeyDown("a")){
-                direction = 1;
-            }
-
-            actCount++;
-            /*
-            if(actCount % intelligence == 0){
-            action();
-            }*/
-
+            getWorld().addObject(h, this.getX(), this.getY());
+            createdHitbox = true;
         }
+        
+        checkCollision();
+        repelMe();
+        getInputs();
+        
+        // init backpack here, not sure how
+        
+        
+       
+
+
+        actCount++;
+        /*
+        if(actCount % intelligence == 0){
+        action();
+        }*/
+
+    
     }
 
     public void setDirection(int dir){
@@ -106,6 +95,28 @@ public class Player extends Effects
         }
     }
 
+    public void getInputs(){
+         if(direction == -1){
+            setImage(reflectedPlayerImage);
+        }
+        else if (direction == 1){
+            setImage(playerImage);
+        }
+        
+        if(Greenfoot.isKeyDown("w")){
+            (getWorld().getObjects(ScrollableWorld.class).get(0)).moveWorld("UP"); 
+        }
+        if(Greenfoot.isKeyDown("a")){
+            (getWorld().getObjects(ScrollableWorld.class).get(0)).moveWorld("LEFT"); 
+        }
+        if(Greenfoot.isKeyDown("s")){
+            (getWorld().getObjects(ScrollableWorld.class).get(0)).moveWorld("DOWN"); 
+        }
+        if(Greenfoot.isKeyDown("d")){
+            (getWorld().getObjects(ScrollableWorld.class).get(0)).moveWorld("RIGHT"); 
+        }    
+    }
+    
     public Actor returnHitbox(){
         return h;
     }
@@ -114,7 +125,7 @@ public class Player extends Effects
     public void action(){
 
     targetClosestEnemy();
-
+        
     if(!melee || !attackReady || distanceToActor < Backpack.getKiteRange()){
     move(-speed);
     }else{

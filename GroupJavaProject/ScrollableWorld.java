@@ -31,7 +31,7 @@ public class ScrollableWorld extends Effects
         worldImage = new GreenfootImage("bgtemp.png");
         worldImage.scale((int)(worldImage.getWidth() * WORLDSIZEFACTOR), (int)(worldImage.getHeight() * WORLDSIZEFACTOR));
         setImage(worldImage);
-        tolerance = 7;
+        tolerance = 6;
         //set Movespeed (varies)
         moveSpeedX = 6;
         moveSpeedY = 6;
@@ -41,69 +41,45 @@ public class ScrollableWorld extends Effects
     public void act()
     {
         testCounter++; 
-        stopJittering = false;
-
         if(!stopJittering){
-            moveWorld("MANUAL");
-            moveWorld("DEBUG");
+            
         }
     }
 
-    //will have direction parameters
     public void moveWorld(String direction){
-        if (MyWorld.isActing())
-        {
-            //manual movement mode, for debugging
-            if(direction.toUpperCase().equals("DEBUG")){
-                if(Greenfoot.isKeyDown("w")){
-                    this.setLocation(this.getX(), this.getY() + moveSpeedY);  
-                    lastDir = 1;
-                }
-                if(Greenfoot.isKeyDown("a")){
-                    this.setLocation(this.getX() + moveSpeedX, this.getY());
-                    lastDir = 2;
-                }
-                if(Greenfoot.isKeyDown("s")){
-                    this.setLocation(this.getX(), this.getY() - moveSpeedY);
-                    lastDir = 3;
-                }
-                if(Greenfoot.isKeyDown("d")){
-                    this.setLocation(this.getX() - moveSpeedX, this.getY());
-                    lastDir = 4;
-                } 
-            }
-
-            if(direction.toUpperCase().equals("UP")){
-                this.setLocation(this.getX(), this.getY() + moveSpeedY);  
-                lastDir = 1;
-            }
-            if(direction.toUpperCase().equals("LEFT")){
-                this.setLocation(this.getX() + moveSpeedX, this.getY());
-                //set direction in player class
-                (getWorld().getObjects(Player.class).get(0)).setDirection(-1);
-                lastDir = 2; 
-            }
-            if(direction.toUpperCase().equals("DOWN")){
-                this.setLocation(this.getX(), this.getY() - moveSpeedY);
-                lastDir = 3;
-            }
-            if(direction.toUpperCase().equals("RIGHT")){
-                this.setLocation(this.getX() - moveSpeedX, this.getY());
-                //set direction in player class
-                (getWorld().getObjects(Player.class).get(0)).setDirection(1);
-                lastDir = 4;
-            }
+        if(direction.toUpperCase().equals("UP")){
+            this.setLocation(this.getX(), this.getY() + moveSpeedY);  
+            lastDir = 1;
         }
+        if(direction.toUpperCase().equals("LEFT")){
+            this.setLocation(this.getX() + moveSpeedX, this.getY());
+            //set direction in player class
+            (getWorld().getObjects(Player.class).get(0)).setDirection(-1);
+            lastDir = 2; 
+        }
+        if(direction.toUpperCase().equals("DOWN")){
+            this.setLocation(this.getX(), this.getY() - moveSpeedY);
+            lastDir = 3;
+        }
+        if(direction.toUpperCase().equals("RIGHT")){
+            this.setLocation(this.getX() - moveSpeedX, this.getY());
+            //set direction in player class
+            (getWorld().getObjects(Player.class).get(0)).setDirection(1);
+            lastDir = 4;
+        }
+        
     }
-
+    
     public void repel(){
         ArrayList<Hitbox> hitboxes = new ArrayList<Hitbox>();
 
         ArrayList<Hitbox> islandHitboxes = new ArrayList<Hitbox>();
         ArrayList<Actor> playerHitBoxes = new ArrayList<Actor>();
         // ArrayList<Hitbox> borderHitboxes = new ArrayList<Hitbox>();
-
+        
+        
         hitboxes = (ArrayList<Hitbox>) getWorld().getObjects(Hitbox.class);
+        
         for(Hitbox i : hitboxes){
             if(i.getType() == "Player"){
                 playerHitBoxes.add(i);
@@ -111,34 +87,35 @@ public class ScrollableWorld extends Effects
                 islandHitboxes.add(i);
             }
         }
-
+        
         for(Hitbox a : islandHitboxes){
             GreenfootImage imgSizeObject = a.getImage();
             GreenfootImage imgSizeOfPlayer = playerHitBoxes.get(0).getImage();
-
+            
             Actor p = playerHitBoxes.get(0);
 
             double xVectorToZero = p.getX() - p.getX();
             double yVectorToZero = p.getY() - p.getY();
-
+            
             // System.out.println(a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 + tolerance);
+            
 
             if(xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance
-            && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
-            && yVectorToZero <= a.getY() + imgSizeObject.getHeight()/2 - p.getY() + imgSizeOfPlayer.getHeight()/2 + tolerance
-            && yVectorToZero >= a.getY() - imgSizeObject.getHeight()/2 - p.getY() - imgSizeOfPlayer.getHeight()/2 - tolerance){
+                && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
+                    && yVectorToZero <= a.getY() + imgSizeObject.getHeight()/2 - p.getY() + imgSizeOfPlayer.getHeight()/2 + tolerance
+                        && yVectorToZero >= a.getY() - imgSizeObject.getHeight()/2 - p.getY() - imgSizeOfPlayer.getHeight()/2 - tolerance){
                 // rebound = moveSpeedX;
                 System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
                     + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
                 //stopJittering = true;
-
+                
                 this.setLocation(this.getX() + moveSpeedX, this.getY()); 
             }
-
+            
             if(xVectorToZero <= a.getX() + imgSizeObject.getWidth()/2 - p.getX() + imgSizeOfPlayer.getWidth()/2 + tolerance
-            && xVectorToZero >= a.getX() + imgSizeObject.getWidth()/2 - p.getX() - moveSpeedX
-            && yVectorToZero <= a.getY() + imgSizeObject.getHeight()/2 - p.getY() + imgSizeOfPlayer.getHeight()/2 + tolerance
-            && yVectorToZero >= a.getY() - imgSizeObject.getHeight()/2 - p.getY() - imgSizeOfPlayer.getHeight()/2 - tolerance){
+                && xVectorToZero >= a.getX() + imgSizeObject.getWidth()/2 - p.getX() - moveSpeedX
+                    && yVectorToZero <= a.getY() + imgSizeObject.getHeight()/2 - p.getY() + imgSizeOfPlayer.getHeight()/2 + tolerance
+                        && yVectorToZero >= a.getY() - imgSizeObject.getHeight()/2 - p.getY() - imgSizeOfPlayer.getHeight()/2 - tolerance){
                 // rebound = moveSpeedX;
                 System.out.println("moving left: " + (a.getX() + imgSizeObject.getWidth()/2 - p.getX() + imgSizeOfPlayer.getWidth()/2 + tolerance) 
                     + " : " + (a.getX() + imgSizeObject.getWidth()/2 - p.getX() - moveSpeedX));
@@ -146,75 +123,72 @@ public class ScrollableWorld extends Effects
 
                 this.setLocation(this.getX() - moveSpeedX, this.getY()); 
             }
-
+            
             if(yVectorToZero <= a.getY() + imgSizeObject.getHeight()/2 - p.getY() + imgSizeOfPlayer.getHeight()/2 + tolerance
-            && yVectorToZero >= a.getY() + imgSizeObject.getHeight()/2 - p.getY() - moveSpeedY
-            && xVectorToZero <= a.getX() + imgSizeObject.getWidth()/2 - p.getX() + imgSizeOfPlayer.getWidth()/2 + tolerance
-            && xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance){
+                && yVectorToZero >= a.getY() + imgSizeObject.getHeight()/2 - p.getY() - moveSpeedY
+                    && xVectorToZero <= a.getX() + imgSizeObject.getWidth()/2 - p.getX() + imgSizeOfPlayer.getWidth()/2 + tolerance
+                        && xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance){
                 // rebound = moveSpeedX;
                 //stopJittering = true;
-
+                
                 this.setLocation(this.getX(), this.getY() - moveSpeedY); 
             }
-
+            
             if(yVectorToZero >= a.getY() - imgSizeObject.getHeight()/2 - p.getY() - imgSizeOfPlayer.getHeight()/2 - tolerance
-            && yVectorToZero <= a.getY() - imgSizeObject.getHeight()/2 - p.getY() + moveSpeedY
-            && xVectorToZero <= a.getX() + imgSizeObject.getWidth()/2 - p.getX() + imgSizeOfPlayer.getWidth()/2 + tolerance
-            && xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance){
+                && yVectorToZero <= a.getY() - imgSizeObject.getHeight()/2 - p.getY() + moveSpeedY
+                    && xVectorToZero <= a.getX() + imgSizeObject.getWidth()/2 - p.getX() + imgSizeOfPlayer.getWidth()/2 + tolerance
+                        && xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance){
                 // rebound = moveSpeedX;
                 // stopJittering = true;
-
+                
                 this.setLocation(this.getX(), this.getY() + moveSpeedY); 
             }
-
+            
             //
-
-            /**
+            
             if(xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance
-            && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
-            && a.getType() == "Border"){
-            // rebound = moveSpeedX;
-            System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
-            + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
-            //stopJittering = true;
-
-            this.setLocation(this.getX() + moveSpeedX, this.getY()); 
+                && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
+                    && a.getType() == "Border"){
+                // rebound = moveSpeedX;
+                System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
+                    + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
+                //stopJittering = true;
+                
+                this.setLocation(this.getX() + moveSpeedX, this.getY()); 
             }
-
+            
             if(xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance
-            && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
-            && a.getType() == "Border"){
-            // rebound = moveSpeedX;
-            System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
-            + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
-            //stopJittering = true;
-
-            this.setLocation(this.getX() + moveSpeedX, this.getY()); 
+                && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
+                    && a.getType() == "Border"){
+                // rebound = moveSpeedX;
+                System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
+                    + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
+                //stopJittering = true;
+                
+                this.setLocation(this.getX() + moveSpeedX, this.getY()); 
             }
-
+            
             if(xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance
-            && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
-            && a.getType() == "Border"){
-            // rebound = moveSpeedX;
-            System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
-            + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
-            //stopJittering = true;
-
-            this.setLocation(this.getX() + moveSpeedX, this.getY()); 
+                && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
+                    && a.getType() == "Border"){
+                // rebound = moveSpeedX;
+                System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
+                    + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
+                //stopJittering = true;
+                
+                this.setLocation(this.getX() + moveSpeedX, this.getY()); 
             }
-
+            
             if(xVectorToZero >= a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance
-            && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
-            && a.getType() == "Border"){
-            // rebound = moveSpeedX;
-            System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
-            + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
-            //stopJittering = true;
-
-            this.setLocation(this.getX() + moveSpeedX, this.getY()); 
+                && xVectorToZero <= a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX
+                    && a.getType() == "Border"){
+                // rebound = moveSpeedX;
+                System.out.println("moving right: " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() - imgSizeOfPlayer.getWidth()/2 - tolerance) 
+                    + " : " + (a.getX() - imgSizeObject.getWidth()/2 - p.getX() + moveSpeedX));
+                //stopJittering = true;
+                
+                this.setLocation(this.getX() + moveSpeedX, this.getY()); 
             }
-             */
         }
     }
-
 }
