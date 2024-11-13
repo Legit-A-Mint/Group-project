@@ -9,28 +9,37 @@ import java.util.ArrayList;
  */
 public abstract class Enemy extends Effects
 {
-    private double relativeX, relativeY;
+    //Inherited variables
     protected double maxSpeed, speed;
     protected int hp, damageToPlayer;
     protected Player player;
     protected int dir;
 
     private boolean removeMe;
+    protected int spawnX, spawnY;
+    
+    private double relativeX, relativeY;
     private double speedX, speedY, pushDistX, pushDistY;
+    private boolean createdHitbox;
+    private boolean collided;
+    private Hitbox h;
+    
     private int[] cordsVector = new int[2];
 
     private static final int MAX_SPAWN_DISTANCE = 350;
     private static final int MIN_SPAWN_DISTANCE = 100;
 
-    protected int spawnX, spawnY;
-
     private int repelPriority;
     private static int repelPrioTracker = 0;
-
     private int myActNumber;
-    private static int nextActNumber = -1;
+    private static int nextActNumber;
+    
 
     protected abstract boolean checkForCollision();
+
+    public abstract void damaged();
+
+    public abstract void attack();
 
     public Enemy(){
         if(Greenfoot.getRandomNumber (2) % 2 == 0){
@@ -60,13 +69,30 @@ public abstract class Enemy extends Effects
 
     public void act()
     {   
+        //create hitbox for every object of enemy created
+        if(!createdHitbox){
+            //new hitbox object will be the size of image
+            //(adjust with parameters soon)
+            h = new Hitbox(getImage().getWidth() - 15, 
+                getImage().getHeight() - 60, 0, 0, this);
+
+            /** updated code later
+            h = new Hitbox(getImage().getWidth() - percentWidth, 
+            getImage().getHeight() - percentHeight, 0, 0, this);
+             */
+
+            //add hitbox to my position
+            getWorld().addObject(h, this.getX(), this.getY());
+            //created hit box is true, no longer need to create a hitbox
+            createdHitbox = true;
+        }
+        
         if (MyWorld.isActing())
         {
             if (MyWorld.getActNumber() == myActNumber)
             {
                 lookForTarget();
             }
-        
             
             repelEnemies();
 
@@ -81,11 +107,7 @@ public abstract class Enemy extends Effects
             }
         }
     }
-
-    public abstract void damaged();
-
-    public abstract void attack();
-
+    
     public void lookForTarget(){
         if(!getWorld().getObjects(Player.class).isEmpty()){
             player = getWorld().getObjects(Player.class).get(0);

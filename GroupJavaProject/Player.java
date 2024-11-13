@@ -58,13 +58,13 @@ public class Player extends Effects
             createdHitbox = true;
         }
         
+        playerInput();
         checkCollision();
         repelMe();
         getInputs();
+    
         
-        // init backpack here, not sure how
-        
-        
+
        
 
 
@@ -92,6 +92,21 @@ public class Player extends Effects
             ((MyWorld)getWorld()).getObjects(ScrollableWorld.class).get(0).repel();
             collided = false;
         }
+    }
+    
+    public void playerInput(){
+        if(Greenfoot.isKeyDown("w")){
+            getWorld().getObjects(ScrollableWorld.class).get(0).moveWorld("UP");
+        }
+        if(Greenfoot.isKeyDown("a")){
+            getWorld().getObjects(ScrollableWorld.class).get(0).moveWorld("LEFT");   
+        }
+        if(Greenfoot.isKeyDown("s")){
+            getWorld().getObjects(ScrollableWorld.class).get(0).moveWorld("DOWN");
+        }
+        if(Greenfoot.isKeyDown("d")){
+            getWorld().getObjects(ScrollableWorld.class).get(0).moveWorld("RIGHT");
+        } 
     }
 
     public void getInputs(){

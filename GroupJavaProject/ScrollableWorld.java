@@ -33,8 +33,8 @@ public class ScrollableWorld extends Effects
         setImage(worldImage);
         tolerance = 6;
         //set Movespeed (varies)
-        moveSpeedX = 6;
-        moveSpeedY = 6;
+        moveSpeedX = 3;
+        moveSpeedY = 3;
         stopJittering = false;
     }
 
@@ -47,25 +47,24 @@ public class ScrollableWorld extends Effects
     }
 
     public void moveWorld(String direction){
-        if(direction.toUpperCase().equals("UP")){
-            this.setLocation(this.getX(), this.getY() + moveSpeedY);  
-            lastDir = 1;
-        }
-        if(direction.toUpperCase().equals("LEFT")){
-            this.setLocation(this.getX() + moveSpeedX, this.getY());
-            //set direction in player class
-            (getWorld().getObjects(Player.class).get(0)).setDirection(-1);
-            lastDir = 2; 
-        }
-        if(direction.toUpperCase().equals("DOWN")){
-            this.setLocation(this.getX(), this.getY() - moveSpeedY);
-            lastDir = 3;
-        }
-        if(direction.toUpperCase().equals("RIGHT")){
-            this.setLocation(this.getX() - moveSpeedX, this.getY());
-            //set direction in player class
-            (getWorld().getObjects(Player.class).get(0)).setDirection(1);
-            lastDir = 4;
+        if (MyWorld.isActing())
+        {
+            if(direction.toUpperCase().equals("UP")){
+                this.setLocation(this.getX(), this.getY() + moveSpeedY);
+            }
+            if(direction.toUpperCase().equals("LEFT")){
+                this.setLocation(this.getX() + moveSpeedX, this.getY());
+                //set direction in player class
+                (getWorld().getObjects(Player.class).get(0)).setDirection(-1);
+            }
+            if(direction.toUpperCase().equals("DOWN")){
+                this.setLocation(this.getX(), this.getY() - moveSpeedY);
+            }
+            if(direction.toUpperCase().equals("RIGHT")){
+                this.setLocation(this.getX() - moveSpeedX, this.getY());
+                //set direction in player class
+                (getWorld().getObjects(Player.class).get(0)).setDirection(1);
+            }
         }
         
     }
