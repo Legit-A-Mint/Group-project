@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @version 1.0.0
  */
-public class hpBar extends Actor {
+public class hpBar extends SuperSmoothMover {
     private int hp;
     private GreenfootImage[] hearts;
 
@@ -16,7 +16,7 @@ public class hpBar extends Actor {
         
         // Load heart images into the array
         for (int i = 0; i < hearts.length; i++) {
-            hearts[i] = new GreenfootImage("");
+            hearts[i] = new GreenfootImage("pixel_Heart.png");
         }
         
         updateDisplay();

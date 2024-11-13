@@ -24,7 +24,6 @@ public class Player extends Effects
 
     private double closestTargetDistance = 0;
     private double distanceToActor;
-
     private int relativeX, relativeY;
     private Hitbox h;
     private boolean createdHitbox;
@@ -44,8 +43,8 @@ public class Player extends Effects
         CPU = moddedCPU;
         maxSpeed = (1.25 + moddedSpeed) * CPU;
         speed = (maxSpeed) * CPU;
-         */
-
+        */
+       
         createdHitbox = false;
     }
 
