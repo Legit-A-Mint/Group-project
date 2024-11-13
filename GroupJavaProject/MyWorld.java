@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 /**
  * me
- * Version 1.0.12
+ * Version 1.0.13
  */
 public class MyWorld extends World
 {   

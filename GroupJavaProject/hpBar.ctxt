@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=hpBar
+comment0.text=\r\n\ hpBar\ class\ to\ display\ and\ manage\ player's\ health\ points.\r\n\ Contains\ methods\ to\ set\ and\ get\ HP,\ as\ well\ as\ display\ heart\ images.\r\n\ \r\n\ @version\ 1.0.0\r\n
+comment1.params=initialHp
+comment1.target=hpBar(int)
+comment2.params=
+comment2.target=int\ getHp()
+comment3.params=newHp
+comment3.target=void\ setHp(int)
+comment4.params=
+comment4.target=void\ updateDisplay()
+comment5.params=
+comment5.target=void\ act()
+numComments=6
