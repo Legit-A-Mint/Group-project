@@ -51,6 +51,10 @@ public abstract class Enemy extends Effects
         repelPrioTracker++;
 
         myActNumber = getNextActNumber();
+        
+        //speedX = speed;
+        //speedY = speed;
+        
         //enableStaticRotation();
     }
 
@@ -58,11 +62,15 @@ public abstract class Enemy extends Effects
     {   
         if (MyWorld.isActing())
         {
-            dir = 1;
-            speedX = speed;
-            speedY = speed;
+            if (MyWorld.getActNumber() == myActNumber)
+            {
+                lookForTarget();
+            }
+        
             
-            lookForTarget();
+            repelEnemies();
+
+            moveWithWorld();
             
             if(this.hp <= 0 ){
                 removeMe = true;
@@ -70,12 +78,6 @@ public abstract class Enemy extends Effects
 
             if(removeMe){
                 getWorld().removeObject(this);
-            }
-            if (MyWorld.getActNumber() == myActNumber)
-            {
-                repelEnemies();
-
-                moveWithWorld();
             }
         }
     }
@@ -89,12 +91,19 @@ public abstract class Enemy extends Effects
             player = getWorld().getObjects(Player.class).get(0);
             turnTowards(player.getX(), player.getY());
 
-            if(player.getX() < this.getX()){
+            if(player.getX() < this.getX() && player.getX() < this.getX()){
                 speedX = -speed;
                 dir = -1;
+            }else{
+                speedX = speed;
+                dir = 1;
             }
             if(player.getY() < this.getY()){
                 speedY = -speed;
+                dir = 1;
+            }else{
+                speedY = speed;
+                dir = 1;
             }
         }
     }
@@ -213,7 +222,7 @@ public abstract class Enemy extends Effects
         if (nextActNumber == -1){
             nextActNumber = 1;
         }
-        if (nextActNumber > 3){
+        if (nextActNumber > 2){
             nextActNumber = 1; // goes back to 1 - Zero (0) is reserved for UI refresh
         }
         return nextActNumber++;
