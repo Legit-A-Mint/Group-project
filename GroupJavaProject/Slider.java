@@ -40,7 +40,6 @@ public class Slider extends Interface
             getWorld().addObject(slider, this.getX(), this.getY());
             createdSlider = true;
         }
-        //System.out.println(getPercent());
     }
 
     public void setTransparency(double t){

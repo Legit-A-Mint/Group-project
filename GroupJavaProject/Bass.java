@@ -18,7 +18,7 @@ public class Bass extends Enemy
         setImage(img[0]);
         
         maxSpeed = 2.0; // Has a max speed of 0.5
-        speed = 1.4; // Has a regular speed of 0.3
+        speed = 1.5; // Has a regular speed of 0.3
         hp = 20; // Has 20 hitpoints
         damageToPlayer = 5; // Does 5 damage to the player
         

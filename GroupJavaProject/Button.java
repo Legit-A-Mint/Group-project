@@ -66,10 +66,9 @@ public class Button extends Interface
     }    
     public boolean checkClicked(){
         if(Greenfoot.mouseClicked(this)){
-            //System.out.println("Clicked button " + name);
             return true;
         }
-        else{ 
+        else{             
             return false;
         }
     }

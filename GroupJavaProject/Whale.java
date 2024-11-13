@@ -12,8 +12,8 @@ public class Whale extends Enemy
     
     
     public Whale(){
-        maxSpeed = 0.2; // Has a max speed of 0.2
-        speed = 0.1; // Has a regular speed of 0.1
+        maxSpeed = 0.7; // Has a max speed of 0.2
+        speed = 0.7; // Has a regular speed of 0.1
         hp = 200; // Has an hp of 200
         damageToPlayer = 75; // Does 75 damage to the player
         
