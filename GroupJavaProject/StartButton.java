@@ -17,8 +17,7 @@ public class StartButton extends StartScreen
     {
         if (Greenfoot.mouseClicked(this))
         {
-            Greenfoot.setWorld(new MyWorld());
-            MyWorld.ambientSound.playLoop();
+            nextWorld();
         }
     }
 }

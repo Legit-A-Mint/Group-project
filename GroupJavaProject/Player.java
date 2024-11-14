@@ -28,9 +28,19 @@ public class Player extends Effects
     private Hitbox h;
     private boolean createdHitbox;
     private boolean collided;
+    
+    // temp
+    private GreenfootImage tempPlayer = new GreenfootImage("boy.png");
+    private GreenfootImage tempFloat = new GreenfootImage("wood.png");
+    
     public Player(){
-        playerImage = new GreenfootImage("shark.png");
-        reflectedPlayerImage = new GreenfootImage("shark.png");
+        playerImage = new GreenfootImage(100, 100);
+        playerImage.drawImage(tempFloat, 0, 0);
+        playerImage.drawImage(tempPlayer, 0, 0);
+        
+        reflectedPlayerImage = new GreenfootImage(100, 100);
+        reflectedPlayerImage.drawImage(tempFloat, 0, 0);
+        reflectedPlayerImage.drawImage(tempPlayer, 0, 0);
         reflectedPlayerImage.mirrorHorizontally();
 
         setImage(playerImage);

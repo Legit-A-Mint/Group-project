@@ -18,7 +18,12 @@ public class StartScreen extends Actor
     {
         if (Greenfoot.isKeyDown("enter"))
         {
-            Greenfoot.setWorld(new MyWorld());
+            nextWorld();
         }
+    }
+    protected void nextWorld()
+    {
+        Greenfoot.setWorld(new MyWorld());
+        MyWorld.ambientSound.playLoop();
     }
 }
